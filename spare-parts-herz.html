@@ -3,34 +3,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Herz Spare Parts | Freedom Green Energy</title>
-  <meta name="description" content="This page is currently under construction. We supply genuine and compatible spare parts for Herz biomass boilers. Call 0333 700 0275 or email info@freedomgreen.co.uk for availability and pricing." />
+  <title>Genuine Herz Spare Parts UK | Pelletstar, Firematic, Firestar &amp; BioFire | Freedom Green Energy</title>
+  <meta name="description" content="Genuine Herz spare parts for pelletstar, firematic, firestar, BioFire &amp; more. UK stocked. Expert identification — call 0333 700 0275. Same-day dispatch on in-stock items." />
+  <link rel="canonical" href="https://freedomgreen.co.uk/spare-parts-herz.html" />
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    .breadcrumb-bar { background: #f9fafb; border-bottom: 1px solid #e5e7eb; padding: 10px 0; }
-    .breadcrumb-nav { max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #6b7280; }
-    .breadcrumb-nav a { color: #2d6a4f; text-decoration: none; }
-    .breadcrumb-nav a:hover { text-decoration: underline; }
-    .breadcrumb-nav [aria-current] { color: #111827; font-weight: 500; }
-    .under-construction { min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 80px 40px; background: #f9fafb; }
-    .uc-inner { text-align: center; max-width: 560px; }
-    .uc-icon { width: 72px; height: 72px; background: linear-gradient(135deg, #1a3d2b, #2d6a4f); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
-    .uc-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #2d6a4f; margin-bottom: 12px; }
-    .uc-inner h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: #111827; margin: 0 0 16px; line-height: 1.2; }
-    .uc-inner p { color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0 0 32px; }
-    .uc-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    /* ── HERO COMPACT ── */
+    .hero-parts {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--green-deep);
+    }
+    .hero-parts .hero-bg-img {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      z-index: 0;
+    }
+    .hero-parts .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,61,43,0.95) 0%, rgba(45,106,79,0.82) 55%, rgba(64,145,108,0.5) 100%);
+      z-index: 1;
+    }
+    .hero-parts-inner {
+      position: relative; z-index: 2;
+      max-width: 1280px; margin: 0 auto;
+      padding: 80px 40px; width: 100%;
+    }
+
+    /* Badges */
+    .dispatch-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(244,168,39,0.15);
+      border: 1px solid rgba(244,168,39,0.45);
+      color: var(--amber); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 22px;
+    }
+    .dispatch-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--amber); animation:pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+    .auth-panel {
+      display: inline-flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px; margin-top: 28px;
+    }
+    .auth-panel-icon {
+      width: 44px; height: 44px;
+      background: var(--amber); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--charcoal); flex-shrink: 0;
+    }
+    .auth-panel strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--white); }
+    .auth-panel span { font-size: 0.75rem; color: rgba(255,255,255,0.65); }
+
+    /* Model cards */
+    .model-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 26px 24px;
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .model-card:hover { box-shadow: var(--shadow-md); border-color: var(--green-light); }
+    .model-tag {
+      display: inline-block;
+      font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 3px 10px; border-radius: 100px;
+      background: var(--green-pale); color: var(--green-main); margin-bottom: 12px;
+    }
+    .model-tag.amber { background: rgba(244,168,39,0.15); color: #9a5200; }
+    .model-card h3 { font-size: 1rem; font-weight: 800; color: var(--charcoal); margin-bottom: 6px; }
+    .model-card .kw-range { font-size: 0.78rem; color: var(--green-main); font-weight: 700; margin-bottom: 10px; }
+    .model-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .model-parts-list { display: flex; flex-direction: column; gap: 5px; }
+    .model-parts-list li {
+      font-size: 0.78rem; color: var(--slate);
+      display: flex; align-items: center; gap: 7px; list-style: none;
+    }
+    .model-parts-list li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--green-main); flex-shrink:0; }
+
+    /* Parts categories */
+    .parts-cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .parts-cat {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 20px 18px;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      cursor: pointer;
+    }
+    .parts-cat:hover { border-color: var(--green-main); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+    .parts-cat-icon {
+      width: 40px; height: 40px;
+      background: var(--green-pale); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; color: var(--green-main);
+    }
+    .parts-cat h4 { font-size: 0.88rem; font-weight: 700; color: var(--charcoal); }
+    .parts-cat p { font-size: 0.76rem; color: var(--muted); line-height: 1.5; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 4px; max-width: 760px; margin: 0 auto; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); }
+    .faq-question {
+      width: 100%; background: none; border: none; padding: 18px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      font-size: 0.9rem; font-weight: 700; color: var(--charcoal); text-align: left;
+      transition: background var(--transition);
+    }
+    .faq-question:hover { background: var(--surface); }
+    .faq-question[aria-expanded="true"] { background: var(--green-pale); color: var(--green-deep); }
+    .faq-icon { width: 22px; height: 22px; flex-shrink: 0; transition: transform var(--transition); }
+    .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { display: none; padding: 0 22px 18px; font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
+    .faq-answer.open { display: block; }
+
+    @media (max-width: 900px) {
+      .hero-parts-inner { padding: 60px 20px; }
+    }
   </style>
+
+  <!-- Schema: BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freedomgreen.co.uk/" },
+          { "@type": "ListItem", "position": 2, "name": "Spare Parts", "item": "https://freedomgreen.co.uk/spare-parts.html" },
+          { "@type": "ListItem", "position": 3, "name": "Herz Spare Parts", "item": "https://freedomgreen.co.uk/spare-parts-herz.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What Herz boiler models do you stock spare parts for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We stock parts for the full Herz Energietechnik range including pelletstar (10–105 kW pellet), firematic (20–301 kW wood chip), firestar (18–40 kW log gasification), pelletfire (20–40 kW combination), and BioFire (400–1,500 kW industrial). We also supply parts for older and discontinued Herz models — call us with your serial number."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are your Herz parts genuine OEM parts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We source all Herz spare parts directly from Herz Energietechnik in Austria to guarantee they are 100% genuine and fully compatible with your system. Using genuine parts is essential to maintain your boiler warranty and safe operation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I find my Herz boiler model and serial number?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your Herz boiler's type plate is typically mounted on the front or side of the unit. It shows the full model name (e.g. Herz firematic 50), serial number, and year of manufacture. If you are unsure, send us a photo of the boiler or type plate and our team will identify the model for you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How quickly are Herz spare parts delivered in the UK?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In-stock Herz parts ordered before 2pm on a working day are dispatched the same day for next working day delivery across mainland UK. For non-stocked items we can typically source from Herz in Austria within 3–7 working days. Call 0333 700 0275 for urgent requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you help diagnose a fault on my Herz boiler?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Our technical team has hands-on experience with Herz systems and can help diagnose faults over the phone. Provide the error code from the boiler controller or describe the symptom and we'll advise on the most likely cause and the parts required to fix it."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BAR -->
 <div class="topbar">
-  <span>🌿 Froling Authorised UK Distributors since 2012</span>
+  <span>⚡ Genuine Herz parts — same-day dispatch on in-stock items (order before 2pm)</span>
   <span class="topbar-divider">|</span>
   <span>Call us: <a href="tel:03337000275">0333 700 0275</a></span>
   <span class="topbar-divider">|</span>
-  <span>MCS &amp; HETAS Approved</span>
+  <span>Herz Energietechnik UK Parts Specialist</span>
 </div>
 
+<!-- NAVIGATION -->
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">
@@ -40,12 +211,15 @@
           <path d="M13 10v10M10 17l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
         </svg>
       </div>
-      <div class="logo-text"><strong>FREEDOM GREEN</strong><span>Renewable Energy Technologies</span></div>
+      <div class="logo-text">
+        <strong>FREEDOM GREEN</strong>
+        <span>Renewable Energy Technologies</span>
+      </div>
     </a>
     <ul class="nav-links">
       <li class="nav-item"><a href="about.html" data-page="about.html">About</a></li>
       <li class="nav-item nav-has-dropdown">
-        <a href="#products" class="has-arrow">Products</a>
+        <a href="#" class="has-arrow">Products</a>
         <div class="dropdown mega-products">
           <div class="dd-col">
             <span class="dd-heading">Froling Biomass Boilers</span>
@@ -59,6 +233,7 @@
           </div>
           <div class="dd-col">
             <span class="dd-heading">Biomass Spare Parts</span>
+            <a href="spare-parts.html" class="dd-item" data-page="spare-parts.html">All Spare Parts</a>
             <a href="spare-parts-froling.html" class="dd-item" data-page="spare-parts-froling.html">Froling</a>
             <a href="spare-parts-herz.html" class="dd-item" data-page="spare-parts-herz.html">Herz</a>
             <a href="spare-parts-binda.html" class="dd-item" data-page="spare-parts-binda.html">Binda</a>
@@ -83,81 +258,541 @@
       <li class="nav-item"><a href="contact.html" data-page="contact.html">Contact Us</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="icon-btn" aria-label="Search"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
-      <button class="icon-btn" aria-label="Account"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
-      <a href="contact.html" class="btn-nav">Get a Quote</a>
-      <button class="icon-btn mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <button class="icon-btn" aria-label="Search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <!-- SHOP CTA: Replace href with Shopify Herz parts collection URL when store goes live -->
+      <a href="#enquiry" class="btn-nav">Order Parts</a>
+      <button class="icon-btn mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </div>
 </nav>
 
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
   <div class="mobile-menu-header">
     <a class="logo" href="index.html">
-      <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 3C13 3 5 9 5 15a8 8 0 0016 0c0-6-8-12-8-12z" fill="white" opacity="0.9"/></svg></div>
+      <div class="logo-mark">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 3C13 3 5 9 5 15a8 8 0 0016 0c0-6-8-12-8-12z" fill="white" opacity="0.9"/>
+        </svg>
+      </div>
       <div class="logo-text"><strong>FREEDOM GREEN</strong><span>Renewable Energy Technologies</span></div>
     </a>
-    <button class="icon-btn" id="mobileClose" aria-label="Close menu"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="icon-btn" id="mobileClose" aria-label="Close menu">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </div>
   <nav class="mobile-links">
-    <a href="about.html" data-page="about.html">About</a>
+    <a href="about.html">About</a>
+    <span class="mobile-group-label">Spare Parts</span>
+    <a href="spare-parts.html" class="mobile-sub">All Spare Parts</a>
+    <a href="spare-parts-froling.html" class="mobile-sub">Froling Parts</a>
+    <a href="spare-parts-herz.html" class="mobile-sub" data-page="spare-parts-herz.html">Herz Parts</a>
     <span class="mobile-group-label">Products</span>
-    <span class="mobile-section-label">Froling Biomass Boilers</span>
-    <a href="pellet-boilers.html" class="mobile-sub" data-page="pellet-boilers.html">Pellet Boilers</a>
-    <a href="wood-chip-boilers.html" class="mobile-sub" data-page="wood-chip-boilers.html">Wood Chip Boilers</a>
-    <a href="log-boilers.html" class="mobile-sub" data-page="log-boilers.html">Log Boilers</a>
-    <a href="sp-dual-boilers.html" class="mobile-sub" data-page="sp-dual-boilers.html">SP Dual Boilers</a>
-    <a href="residential-boilers.html" class="mobile-sub" data-page="residential-boilers.html">Residential Boilers</a>
-    <a href="industrial-boilers.html" class="mobile-sub" data-page="industrial-boilers.html">Industrial Boilers</a>
-    <a href="product-brochures.html" class="mobile-sub" data-page="product-brochures.html">Product Brochures</a>
-    <span class="mobile-section-label">Biomass Spare Parts</span>
-    <a href="spare-parts-froling.html" class="mobile-sub" data-page="spare-parts-froling.html">Froling</a>
-    <a href="spare-parts-herz.html" class="mobile-sub" data-page="spare-parts-herz.html">Herz</a>
-    <a href="spare-parts-binda.html" class="mobile-sub" data-page="spare-parts-binda.html">Binda</a>
-    <a href="spare-parts-other.html" class="mobile-sub" data-page="spare-parts-other.html">Other Brands</a>
-    <span class="mobile-section-label">Pyrolysis CHP</span>
-    <a href="pyrolysis-chp.html" class="mobile-sub" data-page="pyrolysis-chp.html">About Pyrolysis CHP</a>
-    <a href="https://www.froeling.com/en/chp" class="mobile-sub" target="_blank" rel="noopener">Froling CHP ↗</a>
-    <span class="mobile-section-label">Solar PV</span>
-    <a href="smart-solar.html" class="mobile-sub" data-page="smart-solar.html">Smart Solar</a>
-    <a href="https://www.swatten.com" class="mobile-sub" target="_blank" rel="noopener">Swatten ↗</a>
-    <a href="#" class="mobile-sub">Inverters &amp; Batteries ↗</a>
-    <span class="mobile-section-label">Hot Water Heat Pumps</span>
-    <a href="heat-pumps.html" class="mobile-sub" data-page="heat-pumps.html">View Range</a>
-    <a href="installer-services.html" data-page="installer-services.html">Installer Services</a>
-    <a href="contact.html" class="mobile-cta" data-page="contact.html">Contact Us / Get a Quote →</a>
+    <a href="pellet-boilers.html" class="mobile-sub">Pellet Boilers</a>
+    <a href="wood-chip-boilers.html" class="mobile-sub">Wood Chip Boilers</a>
+    <a href="log-boilers.html" class="mobile-sub">Log Boilers</a>
+    <a href="industrial-boilers.html" class="mobile-sub">Industrial Boilers</a>
+    <a href="installer-services.html">Installer Services</a>
+    <!-- SHOP CTA: Replace with Shopify Herz parts URL when live -->
+    <a href="#enquiry" class="mobile-cta">Order Herz Parts →</a>
   </nav>
 </div>
 
-<div class="breadcrumb-bar">
-  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-    <a href="index.html">Home</a><span>›</span><a href="#">Spare Parts</a><span>›</span><span aria-current="page">Herz</span>
-  </nav>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="spare-parts.html">Spare Parts</a>
+    <span class="sep">›</span>
+    <span class="current">Herz Spare Parts</span>
+  </div>
 </div>
 
-<section class="under-construction">
-  <div class="uc-inner">
-    <div class="uc-icon">
-      <svg width="32" height="32" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-    </div>
-    <p class="uc-eyebrow">Coming Soon</p>
-    <h1>Herz Spare Parts</h1>
-    <p>This page is currently under construction. We supply genuine and compatible spare parts for Herz biomass boilers. Call 0333 700 0275 or email info@freedomgreen.co.uk for availability and pricing.</p>
-    <div class="uc-actions">
-      <a href="index.html" class="btn-green">Back to Homepage</a>
-      <a href="contact.html" class="btn-primary">Contact Us</a>
+<!-- HERO -->
+<section class="hero-parts">
+  <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80');"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-parts-inner">
+    <div style="max-width:700px;">
+      <div class="dispatch-badge">UK Parts Specialist — Genuine Herz Parts in Stock</div>
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px;">Genuine Herz Spare Parts — <em style="font-style:normal;color:var(--amber);">UK Stock, Fast Dispatch</em></h1>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);line-height:1.75;margin-bottom:28px;max-width:580px;">We supply genuine spare parts for the full Herz Energietechnik range — pelletstar, firematic, firestar, pelletfire and BioFire systems. Sourced direct from Herz in Austria, UK stocked for fast dispatch. Get your Herz boiler back online with parts that protect your warranty and system performance.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <!-- SHOP CTA: Replace href with Shopify Herz collection URL when live -->
+        <a href="#parts-categories" class="btn-primary">Browse Parts Categories</a>
+        <a href="tel:03337000275" class="btn-outline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call 0333 700 0275
+        </a>
+      </div>
+      <div class="auth-panel">
+        <div class="auth-panel-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div>
+          <strong>Genuine Herz Energietechnik Parts</strong>
+          <span>All parts sourced direct from Herz in Austria — genuine OEM quality guaranteed</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      100% Genuine Herz OEM Parts
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      Same-Day Dispatch (order before 2pm)
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      Full Herz Range Coverage
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      Protects Your Boiler Warranty
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      </div>
+      Expert Fault Diagnosis Support
+    </div>
+  </div>
+</div>
+
+<!-- HERZ MODELS -->
+<section style="padding:80px 40px;background:var(--surface);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Full Model Coverage</div>
+      <h2 class="section-title">Herz parts for every<br/>model in the range</h2>
+      <p class="section-sub">We stock spare parts for the complete Herz Energietechnik product range — from compact residential pellet boilers to large-scale industrial wood chip and biomass systems.</p>
+    </div>
+    <div class="card-grid card-grid-3">
+
+      <div class="model-card">
+        <span class="model-tag">Pellet Boilers</span>
+        <h3>pelletstar &amp; pelletstar-H Series</h3>
+        <div class="kw-range">10 – 105 kW</div>
+        <p>Herz's fully automatic pellet boiler range for residential and light commercial applications. Includes standard pelletstar, pelletstar-H (high efficiency), and pelletstar-HE variants.</p>
+        <ul class="model-parts-list">
+          <li>Ignition elements &amp; electrodes</li>
+          <li>Lambda O₂ sensors &amp; probes</li>
+          <li>Combustion fans &amp; draught motors</li>
+          <li>Pellet auger &amp; feed components</li>
+          <li>Grate bars &amp; cleaning arms</li>
+          <li>Control boards &amp; myHERZ modules</li>
+          <li>Door seals &amp; high-temp gaskets</li>
+        </ul>
+      </div>
+
+      <div class="model-card">
+        <span class="model-tag">Pellet Condensing</span>
+        <h3>pelletstar CONDENSATION</h3>
+        <div class="kw-range">80 – 101 kW</div>
+        <p>Herz's condensing pellet boiler achieving maximum efficiency by recovering latent heat from flue gases. Specialist parts for both the combustion system and the condensing module.</p>
+        <ul class="model-parts-list">
+          <li>Condensing heat exchanger parts</li>
+          <li>Condensate drain &amp; neutralisation kit</li>
+          <li>Lambda sensors &amp; flue components</li>
+          <li>Combustion fan assemblies</li>
+          <li>Grate &amp; ash system components</li>
+          <li>Control board &amp; sensor kits</li>
+          <li>Seals &amp; thermal gaskets</li>
+        </ul>
+      </div>
+
+      <div class="model-card">
+        <span class="model-tag amber">Wood Chip</span>
+        <h3>firematic Series</h3>
+        <div class="kw-range">20 – 301 kW</div>
+        <p>Herz's flagship wood chip boiler range — robust, high-efficiency, and suitable for a wide range of fuel qualities. Popular for agricultural, commercial, and district heating applications.</p>
+        <ul class="model-parts-list">
+          <li>Firematic grate bars &amp; stoker parts</li>
+          <li>Lambda probes &amp; O₂ sensors</li>
+          <li>Fuel feed auger &amp; screw components</li>
+          <li>Heat exchanger turbulators &amp; baffles</li>
+          <li>Primary &amp; secondary air fans</li>
+          <li>Combustion chamber ceramics &amp; seals</li>
+          <li>Ash auger &amp; removal motors</li>
+        </ul>
+      </div>
+
+      <div class="model-card">
+        <span class="model-tag">Log Gasification</span>
+        <h3>firestar Series</h3>
+        <div class="kw-range">18 – 40 kW</div>
+        <p>Herz log wood gasification boilers. The firestar De Luxe and Lambda ECO variants deliver high-temperature combustion for exceptional efficiency from quality dry logs.</p>
+        <ul class="model-parts-list">
+          <li>Combustion chamber ceramics &amp; linings</li>
+          <li>Secondary air nozzle &amp; rings</li>
+          <li>Door seals &amp; viewing glass</li>
+          <li>Draught fans &amp; fan motors</li>
+          <li>Lambda ECO sensor kits</li>
+          <li>Temperature limiters (STB/STW)</li>
+          <li>Safety valve &amp; sensor components</li>
+        </ul>
+      </div>
+
+      <div class="model-card">
+        <span class="model-tag">Combination</span>
+        <h3>pelletfire</h3>
+        <div class="kw-range">20 – 40 kW</div>
+        <p>The Herz pelletfire combines log wood gasification with automatic pellet burning in a single unit. Parts cover both combustion systems and the integrated control module.</p>
+        <ul class="model-parts-list">
+          <li>Log combustion chamber parts</li>
+          <li>Pellet feed &amp; ignition components</li>
+          <li>Combination control module</li>
+          <li>Shared heat exchanger parts</li>
+          <li>Door seals (log &amp; pellet sides)</li>
+          <li>Lambda sensors &amp; probes</li>
+          <li>Draught fan &amp; motor assembly</li>
+        </ul>
+      </div>
+
+      <div class="model-card">
+        <span class="model-tag amber">Industrial</span>
+        <h3>BioFire &amp; BioFire Taurus</h3>
+        <div class="kw-range">400 – 1,500 kW</div>
+        <p>Industrial-scale Herz biomass systems for large commercial, district heating, and process applications. Engineered for continuous operation at maximum output with minimal downtime.</p>
+        <ul class="model-parts-list">
+          <li>Heavy-duty industrial grate components</li>
+          <li>High-capacity fuel feed parts</li>
+          <li>Industrial lambda control systems</li>
+          <li>Stoker &amp; retort components</li>
+          <li>Industrial ash removal augers</li>
+          <li>Control system modules &amp; sensors</li>
+          <li>High-temperature combustion seals</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="info-box" style="margin-top:32px;">
+      <h4>Don't see your Herz model listed?</h4>
+      <p>We can also source parts for older and discontinued Herz models. Call our team on 0333 700 0275 with your model name and serial number and we'll check availability immediately.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARTS CATEGORIES -->
+<section id="parts-categories" style="padding:80px 40px;background:var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Parts by Category</div>
+      <h2 class="section-title">Browse Herz parts<br/>by component type</h2>
+      <p class="section-sub">Know the type of part you need? Browse our most common Herz part categories. Not sure? Call us and we'll identify the exact component for your system.</p>
+    </div>
+    <div class="parts-cat-grid">
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h4>Ignition Components</h4>
+        <p>Ignition electrodes, coils, igniter blowers, and start-up heating elements for all Herz models.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h4>Lambda &amp; O₂ Sensors</h4>
+        <p>Lambda probes, oxygen sensors, and flue gas monitoring components for precise Herz combustion control.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
+        </div>
+        <h4>Grates &amp; Stoker Parts</h4>
+        <p>Grate bars, stoker fingers, retort components, and ash pusher parts for Herz combustion chambers.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h4>Seals &amp; Gaskets</h4>
+        <p>Door seals, combustion chamber gaskets, flue seals, and high-temperature ceramic rope for Herz boilers.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4>Temperature &amp; Safety Sensors</h4>
+        <p>PT100/PT1000 sensors, safety temperature limiters (STB/STW), thermostats, and overheat protection components.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        </div>
+        <h4>Control Boards &amp; Electronics</h4>
+        <p>Herz control boards, myHERZ smart management modules, display units, fuses, relays, and wiring components.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h4>Combustion Fans &amp; Motors</h4>
+        <p>Primary and secondary air fans, draught fans, and fan motors for all Herz pellet, wood chip, and log boiler systems.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Fuel Feed &amp; Conveying</h4>
+        <p>Auger and screw conveyor parts, shear pins, hopper components, and fuel metering parts for Herz systems.</p>
+      </div>
+
+      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="parts-cat-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3l18 18M10.5 10.677a2 2 0 102.823 2.823"/><path d="M7.362 7.561C5.68 8.74 4.279 10.42 3 12c1.889 2.991 5.282 6 9 6 1.55 0 3.043-.523 4.395-1.35M12 6c3.518 0 6.912 3.009 9 6-.526.83-1.12 1.62-1.77 2.34"/></svg>
+        </div>
+        <h4>Heat Exchanger Parts</h4>
+        <p>Turbulators, cleaning scrapers, baffles, and automatic heat exchanger cleaning system components.</p>
+      </div>
+
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">Can't find the Herz part category you need?</p>
+      <!-- SHOP CTA: Replace href with Shopify full Herz catalogue URL when live -->
+      <a href="#enquiry" class="btn-primary">Enquire About Any Herz Part →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY FREEDOM GREEN -->
+<section style="padding:80px 40px;background:var(--green-deep);">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:48px;">
+      <div class="section-label" style="color:var(--amber);">Why Freedom Green</div>
+      <h2 class="section-title" style="color:var(--white);">The UK's most trusted<br/>Herz parts specialist</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.65);">We know Herz biomass systems inside out — from compact residential pelletstar boilers to large-scale BioFire industrial plants. Real expertise, genuine parts, fast dispatch.</p>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:28px;">
+        <div style="width:44px;height:44px;background:rgba(244,168,39,0.18);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:16px;">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3 style="font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:8px;">Warranty Protection Guaranteed</h3>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;">Only genuine Herz parts protect your boiler's manufacturer warranty. Aftermarket alternatives can void your warranty and introduce compatibility issues that lead to expensive failures.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:28px;">
+        <div style="width:44px;height:44px;background:rgba(244,168,39,0.18);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:16px;">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 style="font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:8px;">Extensive UK Herz Parts Stock</h3>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;">We hold the most comprehensive UK stock of Herz spare parts. Most common components are available for same-day dispatch — so you can minimise downtime and get your system running again fast.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:28px;">
+        <div style="width:44px;height:44px;background:rgba(244,168,39,0.18);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:16px;">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3 style="font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:8px;">Expert Herz Technical Support</h3>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;">Our engineers have hands-on experience with the complete Herz range. We can diagnose faults remotely, identify parts from descriptions or photos, and guide you through fitting — all at no extra charge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section id="enquiry" style="padding:80px 40px;background:var(--surface);">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Herz Parts Enquiry</div>
+        <h2 class="section-title">Order genuine Herz<br/>parts today</h2>
+        <p class="section-sub" style="margin-bottom:36px;">Provide your Herz boiler model, the part number or a description of the fault, and we'll confirm availability and pricing — usually within the hour.</p>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:03337000275" style="color:inherit;text-decoration:none;">0333 700 0275</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@freedomgreen.co.uk" style="color:inherit;text-decoration:none;">info@freedomgreen.co.uk</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Office Hours</h4>
+            <p>Mon–Fri: 8:30am – 5:00pm</p>
+          </div>
+        </div>
+        <div class="info-box" style="margin-top:0;">
+          <h4>Speed up your Herz parts enquiry</h4>
+          <p>Have your Herz model name (e.g. Herz firematic 50 or pelletstar 30), serial number (from the type plate), and part number or fault description ready. A photo of the fault or the part required helps us get it right first time. Email photos to info@freedomgreen.co.uk.</p>
+        </div>
+      </div>
+      <div class="form-card">
+        <form name="herz-parts-enquiry" method="POST" action="#">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="John" />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Smith" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="07700 000000" />
+            </div>
+            <div class="form-group full">
+              <label for="herz-model">Herz Model &amp; Serial Number *</label>
+              <input type="text" id="herz-model" name="herz-model" placeholder="e.g. Herz firematic 50 — Serial: XXXXXX" required />
+            </div>
+            <div class="form-group full">
+              <label for="part">Part Number or Fault Description *</label>
+              <textarea id="part" name="part" placeholder="Enter the Herz part number if known, or describe the fault or part required. Include any error codes shown on the controller display. Photos can be emailed to info@freedomgreen.co.uk." required></textarea>
+            </div>
+            <div class="form-group full">
+              <label for="qty">Quantity Required</label>
+              <input type="number" id="qty" name="qty" placeholder="1" min="1" />
+            </div>
+          </div>
+          <!-- SHOP CTA: When Shopify store launches, add a shop online button alongside this form -->
+          <button type="submit" class="btn-submit">Send Herz Parts Enquiry →</button>
+          <p style="font-size:0.75rem;color:var(--muted);margin-top:12px;text-align:center;">Urgent breakdown? Call us directly on <a href="tel:03337000275" style="color:var(--green-main);">0333 700 0275</a> for fastest response.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:80px 40px;background:var(--white);">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Herz Parts FAQ</div>
+      <h2 class="section-title">Frequently asked questions<br/>about Herz spare parts</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What Herz boiler models do you stock spare parts for?
+          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          We stock parts for the full current Herz Energietechnik range including: pelletstar, pelletstar-H and pelletstar-HE (10–105 kW pellet), pelletstar CONDENSATION (80–101 kW), firematic (20–301 kW wood chip), firestar De Luxe and Lambda ECO (18–40 kW log gasification), pelletfire (20–40 kW combination), and BioFire / BioFire Taurus (400–1,500 kW industrial). We can also source parts for older and discontinued Herz models — call us with your serial number.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are your Herz parts genuine OEM — not aftermarket copies?
+          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          Yes — 100% genuine Herz Energietechnik parts every time. We source directly from Herz in Austria to guarantee full compatibility and authentic quality. We do not supply aftermarket or copy components. Non-genuine parts risk voiding your warranty and can cause premature component failure or system damage.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I find my Herz boiler model and serial number?
+          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          Your Herz boiler's type plate is typically mounted on the front panel or side of the unit, and shows the full model name (e.g. "Herz firematic 50"), serial number, kW output, and year of manufacture. Your original commissioning documentation should also contain this information. If you're unsure, send us a photo of the boiler or type plate and we'll identify the model for you.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How quickly will my Herz spare parts be delivered?
+          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          In-stock Herz parts ordered before 2pm on a working day are dispatched same day, with next working day delivery available across mainland UK. For non-stocked items, we can typically source directly from Herz Energietechnik in Austria within 3–7 working days. For urgent orders, call us on 0333 700 0275 to discuss fastest available options.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can you help diagnose a fault on my Herz boiler?
+          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          Yes. Our technical team has hands-on experience with the complete Herz range. Share the error code shown on the controller display or describe the symptoms — e.g. shutdown behaviour, fault history, unusual noise — and we'll advise on the most likely cause and the parts required. We can also provide on-site service support for more complex faults — contact us for details.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED LINKS -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="cta-label">Also From Freedom Green</div>
+      <h2>Need Froling parts or a<br/>new biomass boiler?</h2>
+      <p>We supply the full Froling biomass boiler range from 7kW to 1,500kW alongside a comprehensive range of genuine Froling spare parts — all with the same expert support and fast UK delivery.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="spare-parts-froling.html" class="btn-white">Froling Spare Parts</a>
+      <a href="spare-parts.html" class="btn-ghost-white">All Spare Parts</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">
-        <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 3C13 3 5 9 5 15a8 8 0 0016 0c0-6-8-12-8-12z" fill="white" opacity="0.9"/></svg></div>
-        <div class="footer-logo-text"><strong>FREEDOM GREEN</strong><span>Renewable Energy Technologies</span></div>
+        <div class="logo-mark">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 3C13 3 5 9 5 15a8 8 0 0016 0c0-6-8-12-8-12z" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="footer-logo-text">
+          <strong>FREEDOM GREEN</strong>
+          <span>Renewable Energy Technologies</span>
+        </div>
       </div>
-      <p>Authorised UK distributors for Froling biomass boilers since 2012. Specialists in renewable heating, solar, and sustainable energy technologies across the UK.</p>
+      <p>Authorised UK distributors for Froling biomass boilers since 2012. Genuine spare parts for Herz, Froling and other leading biomass heating systems. UK stocked and fast dispatched.</p>
       <div class="footer-newsletter">
         <p>Stay updated with news, offers and product launches:</p>
         <div class="newsletter-form">
@@ -167,25 +802,24 @@
       </div>
     </div>
     <div class="footer-col">
-      <h4>Products</h4>
+      <h4>Spare Parts</h4>
       <ul>
-        <li><a href="industrial-boilers.html">Industrial Biomass Boilers</a></li>
-        <li><a href="residential-boilers.html">Residential Biomass Boilers</a></li>
-        <li><a href="wood-chip-boilers.html">Wood Chip Boilers</a></li>
-        <li><a href="pellet-boilers.html">Wood Pellet Boilers</a></li>
-        <li><a href="log-boilers.html">Log Wood Boilers</a></li>
-        <li><a href="sp-dual-boilers.html">SP Dual Boilers</a></li>
-        <li><a href="pyrolysis-chp.html">Pyrolysis CHP</a></li>
+        <li><a href="spare-parts.html">All Spare Parts</a></li>
+        <li><a href="spare-parts-froling.html">Froling Spare Parts</a></li>
+        <li><a href="spare-parts-herz.html">Herz Spare Parts</a></li>
+        <li><a href="spare-parts-binda.html">Binda Parts</a></li>
+        <li><a href="spare-parts-other.html">Other Brands</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Services</h4>
+      <h4>Products</h4>
       <ul>
+        <li><a href="pellet-boilers.html">Pellet Boilers</a></li>
+        <li><a href="wood-chip-boilers.html">Wood Chip Boilers</a></li>
+        <li><a href="log-boilers.html">Log Wood Boilers</a></li>
+        <li><a href="industrial-boilers.html">Industrial Boilers</a></li>
         <li><a href="heat-pumps.html">Hot Water Heat Pumps</a></li>
         <li><a href="smart-solar.html">Smart Solar PV</a></li>
-        <li><a href="spare-parts-froling.html">Part Supplies</a></li>
-        <li><a href="installer-services.html">Installer Training</a></li>
-        <li><a href="installer-services.html">Technical Support</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -200,13 +834,32 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Freedom Green Energy Ltd. All rights reserved. Froling Authorised UK Distributor.</p>
+    <p>© 2026 Freedom Green Energy Ltd. All rights reserved. Herz Spare Parts UK Specialist.</p>
     <div class="footer-bottom-links">
-      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a><a href="contact.html">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </footer>
 
 <script src="assets/nav.js" defer></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    });
+  });
+</script>
 </body>
 </html>
