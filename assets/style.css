@@ -2,20 +2,21 @@
    FREEDOM GREEN ENERGY — Stylesheet
    ═══════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ── VARIABLES ── */
 :root {
-  --green-deep:   #1a3d2b;
-  --green-main:   #2d6a4f;
-  --green-mid:    #40916c;
-  --green-light:  #74c69d;
-  --green-pale:   #d8f3dc;
-  --amber:        #f4a827;
-  --amber-dark:   #d4860a;
+  --green-deep:   #3d5a1e;
+  --green-main:   #87a946;
+  --green-mid:    #9bba58;
+  --green-light:  #aecf6a;
+  --green-pale:   #eef5dd;
+  --amber:        #f9cc3c;
+  --amber-dark:   #d4a820;
+  --red:          #d1302c;
   --charcoal:     #111827;
   --slate:        #374151;
   --muted:        #6b7280;
@@ -330,7 +331,7 @@ nav.breadcrumb-nav {
   line-height: 1.6;
 }
 .dd-badge-green { background: var(--green-pale); color: var(--green-main); }
-.dd-badge-amber { background: rgba(244,168,39,0.18); color: #9a5200; }
+.dd-badge-amber { background: rgba(249,204,60,0.18); color: #8a6d00; }
 
 /* ── HERO ── */
 .hero {
@@ -344,7 +345,7 @@ nav.breadcrumb-nav {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(26,61,43,0.92) 0%, rgba(45,106,79,0.75) 50%, rgba(64,145,108,0.5) 100%);
+  background: linear-gradient(135deg, rgba(61,90,30,0.92) 0%, rgba(135,169,70,0.75) 50%, rgba(155,186,88,0.5) 100%);
   z-index: 1;
 }
 .hero-bg-img {
@@ -370,8 +371,8 @@ nav.breadcrumb-nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(244,168,39,0.18);
-  border: 1px solid rgba(244,168,39,0.4);
+  background: rgba(249,204,60,0.18);
+  border: 1px solid rgba(249,204,60,0.4);
   color: var(--amber);
   font-size: 0.75rem;
   font-weight: 700;
@@ -383,7 +384,7 @@ nav.breadcrumb-nav {
 }
 .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
 .hero h1 {
-  font-family: 'Playfair Display', serif;
+
   font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-weight: 900;
   color: var(--white);
@@ -464,9 +465,9 @@ nav.breadcrumb-nav {
   align-items: center;
   gap: 8px;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 20px rgba(244,168,39,0.35);
+  box-shadow: 0 4px 20px rgba(249,204,60,0.35);
 }
-.btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(244,168,39,0.4); }
+.btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(249,204,60,0.4); }
 .btn-outline {
   background: transparent;
   color: var(--white);
@@ -578,7 +579,7 @@ section { padding: 96px 40px; }
   margin-bottom: 12px;
 }
 .section-title {
-  font-family: 'Playfair Display', serif;
+
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 700;
   color: var(--charcoal);
@@ -815,7 +816,7 @@ section { padding: 96px 40px; }
   margin-bottom: 12px;
 }
 .installer h2 {
-  font-family: 'Playfair Display', serif;
+
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
   color: var(--white);
@@ -890,7 +891,7 @@ section { padding: 96px 40px; }
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: var(--green-mid);
-  box-shadow: 0 0 0 3px rgba(64,145,108,0.12);
+  box-shadow: 0 0 0 3px rgba(155,186,88,0.12);
 }
 .form-group textarea { resize: vertical; min-height: 110px; }
 .btn-submit {
@@ -1049,7 +1050,7 @@ footer {
   margin-bottom: 10px;
 }
 .cta-text h2 {
-  font-family: 'Playfair Display', serif;
+
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 700;
   color: var(--white);
