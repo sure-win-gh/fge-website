@@ -19,16 +19,8 @@
       '<div class="nav-inner">' +
 
         '<a class="logo" href="index.html">' +
-          '<div class="logo-mark">' +
-            '<svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-              '<path d="M13 3C13 3 5 9 5 15a8 8 0 0016 0c0-6-8-12-8-12z" fill="white" opacity="0.9"/>' +
-              '<path d="M13 10v10M10 17l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>' +
-            '</svg>' +
-          '</div>' +
-          '<div class="logo-text">' +
-            '<strong>FREEDOM GREEN</strong>' +
-            '<span>Renewable Energy Technologies</span>' +
-          '</div>' +
+          '<img class="logo-img" src="assets/img/logo.png" width="224" height="138" ' +
+               'alt="Freedom Green Energy &#8212; Renewable Energy Technologies" />' +
         '</a>' +
 
         '<ul class="nav-links">' +
@@ -96,15 +88,8 @@
     '<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">' +
       '<div class="mobile-menu-header">' +
         '<a class="logo" href="index.html">' +
-          '<div class="logo-mark">' +
-            '<svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-              '<path d="M13 3C13 3 5 9 5 15a8 8 0 0016 0c0-6-8-12-8-12z" fill="white" opacity="0.9"/>' +
-            '</svg>' +
-          '</div>' +
-          '<div class="logo-text">' +
-            '<strong>FREEDOM GREEN</strong>' +
-            '<span>Renewable Energy Technologies</span>' +
-          '</div>' +
+          '<img class="logo-img" src="assets/img/logo.png" width="224" height="138" ' +
+               'alt="Freedom Green Energy &#8212; Renewable Energy Technologies" />' +
         '</a>' +
         '<button class="icon-btn" id="mobileClose" aria-label="Close menu">' +
           '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +

@@ -89,31 +89,11 @@ nav.breadcrumb-nav {
   text-decoration: none;
   flex-shrink: 0;
 }
-.logo-mark {
-  width: 44px;
-  height: 44px;
-  background: var(--green-main);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.logo-mark svg { width: 26px; height: 26px; }
-.logo-text { line-height: 1.1; }
-.logo-text strong {
+.logo-img {
   display: block;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--green-deep);
-  letter-spacing: -0.01em;
-}
-.logo-text span {
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  height: 56px;
+  width: auto;
+  flex-shrink: 0;
 }
 .nav-links {
   display: flex;
@@ -925,9 +905,7 @@ footer {
 }
 .footer-brand p { font-size: 0.85rem; line-height: 1.75; margin-top: 16px; }
 .footer-logo { display: flex; align-items: center; gap: 12px; }
-.footer-logo .logo-mark { background: var(--green-main); }
-.footer-logo-text strong { color: var(--white); font-size: 1.05rem; font-weight: 800; }
-.footer-logo-text span { font-size: 0.65rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; }
+.footer-logo .logo-img { height: 60px; }
 .footer-col h4 {
   font-size: 0.78rem;
   font-weight: 700;
@@ -1126,6 +1104,7 @@ footer {
 }
 @media (max-width: 600px) {
   .topbar { font-size: 0.7rem; gap: 12px; }
+  .logo-img { height: 44px; }
   .cat-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
