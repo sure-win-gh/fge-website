@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Spare Part | Freedom Green Energy</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* ── PRODUCT DETAIL PAGE ── */
+    .pdp-breadcrumb {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 40px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .pdp-breadcrumb a { color: var(--muted); text-decoration: none; }
+    .pdp-breadcrumb a:hover { color: var(--green-main); }
+    .pdp-breadcrumb span { margin: 0 6px; }
+
+    .pdp-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ── Gallery ── */
+    .pdp-gallery { position: sticky; top: 90px; }
+    .pdp-main-img-wrap {
+      aspect-ratio: 1;
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      border: 2px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .pdp-main-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 24px;
+      transition: transform 0.4s ease;
+    }
+    .pdp-main-img-wrap:hover img { transform: scale(1.04); }
+    .pdp-img-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--border);
+      width: 100%;
+      height: 100%;
+    }
+    .pdp-thumbs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pdp-thumb {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color var(--transition);
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .pdp-thumb:hover,
+    .pdp-thumb.active { border-color: var(--green-main); }
+    .pdp-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+
+    /* ── Details panel ── */
+    .pdp-details {}
+    .pdp-vendor {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green-main);
+      margin-bottom: 10px;
+    }
+    .pdp-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--charcoal);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .pdp-stock-price {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .pdp-price {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--green-deep);
+      line-height: 1;
+    }
+    .pdp-price-por {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .pdp-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    /* Options */
+    .pdp-option { margin-bottom: 20px; }
+    .pdp-option-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      margin-bottom: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .pdp-option-selected {
+      font-weight: 600;
+      color: var(--green-deep);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .pdp-option-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pdp-pill {
+      padding: 8px 16px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition), color var(--transition);
+    }
+    .pdp-pill:hover { border-color: var(--green-main); }
+    .pdp-pill.active {
+      border-color: var(--green-main);
+      background: var(--green-pale);
+      color: var(--green-deep);
+    }
+    .pdp-pill.unavailable {
+      opacity: 0.4;
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+
+    /* Action buttons */
+    .pdp-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .pdp-btn-cart {
+      flex: 1;
+      padding: 15px 20px;
+      background: var(--green-main);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .pdp-btn-cart:hover:not(:disabled) { background: var(--green-deep); transform: translateY(-1px); }
+    .pdp-btn-cart:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    .pdp-btn-quote {
+      flex: 1;
+      padding: 15px 20px;
+      background: var(--amber);
+      color: var(--charcoal);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .pdp-btn-quote:hover { background: var(--amber-dark); transform: translateY(-1px); }
+    .pdp-btn-quote.in-quote {
+      background: var(--green-pale);
+      color: var(--green-deep);
+      border: 2px solid var(--green-light);
+    }
+
+    /* Trust badges */
+    .pdp-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 18px;
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .pdp-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--slate);
+      font-weight: 500;
+    }
+    .pdp-trust-item svg { color: var(--green-main); flex-shrink: 0; }
+
+    /* Description */
+    .pdp-desc-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .pdp-desc {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.75;
+    }
+    .pdp-desc p { margin-bottom: 10px; }
+    .pdp-desc ul { padding-left: 18px; margin-bottom: 10px; }
+    .pdp-desc li { margin-bottom: 4px; }
+
+    /* Loading / error */
+    .pdp-loading, .pdp-error {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 100px 20px;
+      color: var(--muted);
+    }
+    .pdp-spinner {
+      width: 40px; height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--green-main);
+      border-radius: 50%;
+      animation: pdp-spin 0.8s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes pdp-spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 900px) {
+      .pdp-breadcrumb { padding: 12px 20px; }
+      .pdp-wrap { grid-template-columns: 1fr; gap: 32px; padding: 32px 20px 60px; }
+      .pdp-gallery { position: static; }
+    }
+  </style>
+</head>
+<body>
+<script src="assets/nav.js"></script>
+<!-- BREADCRUMB -->
+<div class="pdp-breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <a href="spare-parts.html">Spare Parts</a>
+  <span>›</span>
+  <span id="breadcrumbTitle">Loading…</span>
+</div>
+
+<!-- PRODUCT PAGE -->
+<main>
+  <div class="pdp-wrap" id="pdpWrap">
+    <div class="pdp-loading" id="pdpLoading">
+      <div class="pdp-spinner"></div>
+      <p>Loading product…</p>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 3C13 3 5 9 5 15a8 8 0 0016 0c0-6-8-12-8-12z" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="footer-logo-text">
+          <strong>FREEDOM GREEN</strong>
+          <span>Renewable Energy Technologies</span>
+        </div>
+      </div>
+      <p>Authorised UK distributors for Froling biomass boilers since 2012. Genuine OEM spare parts for Froling, Herz and other leading biomass heating brands.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Spare Parts</h4>
+      <ul>
+        <li><a href="spare-parts.html">All Spare Parts</a></li>
+        <li><a href="spare-parts-froling.html">Froling Spare Parts</a></li>
+        <li><a href="spare-parts-herz.html">Herz Spare Parts</a></li>
+        <li><a href="spare-parts-binda.html">Binda Parts</a></li>
+        <li><a href="spare-parts-other.html">Other Brands</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="pellet-boilers.html">Pellet Boilers</a></li>
+        <li><a href="wood-chip-boilers.html">Wood Chip Boilers</a></li>
+        <li><a href="log-boilers.html">Log Wood Boilers</a></li>
+        <li><a href="industrial-boilers.html">Industrial Boilers</a></li>
+        <li><a href="heat-pumps.html">Heat Pumps</a></li>
+        <li><a href="smart-solar.html">Smart Solar PV</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Freedom Green</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="installer-services.html">Installer Services</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Freedom Green Energy Ltd. All rights reserved. Froling Authorised UK Distributor.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  'use strict';
+
+  var DOMAIN = 'fgebiomass.myshopify.com';
+  var TOKEN  = '53b21bb7b9ed4682c33954b8f2baf661';
+
+  // ── State ──
+  var product          = null;
+  var images           = [];
+  var variants         = [];
+  var selectedOptions  = {}; // { "Size": "M", "Colour": "Red" }
+  var activeVariant    = null;
+  var mainImgEl        = null;
+
+  // ── GraphQL ──
+  function gql(query, variables) {
+    return fetch('https://' + DOMAIN + '/api/2024-01/graphql.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': TOKEN
+      },
+      body: JSON.stringify({ query: query, variables: variables || {} })
+    }).then(function (r) { return r.json(); });
+  }
+
+  function fetchProduct(handle) {
+    return gql('\
+      query productByHandle($handle: String!) {\
+        product(handle: $handle) {\
+          id title handle descriptionHtml vendor productType\
+          images(first: 10) { edges { node { url altText } } }\
+          options { name values }\
+          variants(first: 50) {\
+            edges { node {\
+              id title availableForSale\
+              price { amount currencyCode }\
+              selectedOptions { name value }\
+              image { url altText }\
+            } }\
+          }\
+        }\
+      }', { handle: handle }
+    ).then(function (d) { return d.data.product; });
+  }
+
+  // ── Find variant from selectedOptions map ──
+  function findVariant() {
+    return variants.find(function (v) {
+      return v.selectedOptions.every(function (opt) {
+        return selectedOptions[opt.name] === opt.value;
+      });
+    }) || null;
+  }
+
+  // ── Update price + stock + button state ──
+  function syncActiveVariant() {
+    activeVariant = findVariant();
+
+    var priceEl     = document.getElementById('pdpPrice');
+    var stockEl     = document.getElementById('pdpStock');
+    var cartBtn     = document.getElementById('pdpCartBtn');
+    var quoteBtn    = document.getElementById('pdpQuoteBtn');
+    if (!priceEl) return;
+
+    if (activeVariant) {
+      var price = parseFloat(activeVariant.price.amount);
+      priceEl.textContent = price > 0 ? '£' + price.toFixed(2) : 'Price on request';
+      priceEl.className   = price > 0 ? 'pdp-price' : 'pdp-price-por';
+
+      var avail = activeVariant.availableForSale;
+      stockEl.textContent  = avail ? 'In Stock' : 'Out of Stock';
+      stockEl.className    = 'product-stock ' + (avail ? 'in-stock' : 'out-of-stock');
+      cartBtn.disabled     = !avail;
+      cartBtn.textContent  = avail ? 'Add to Cart' : 'Out of Stock';
+
+      // Quote button: in-quote state
+      if (window.FGEQuote && window.FGEQuote.isInQuote(activeVariant.id)) {
+        quoteBtn.textContent = '✓ In Quote';
+        quoteBtn.classList.add('in-quote');
+      } else {
+        quoteBtn.textContent = 'Add to Quote';
+        quoteBtn.classList.remove('in-quote');
+      }
+
+      // If variant has its own image, switch to it
+      if (activeVariant.image) {
+        setMainImage(activeVariant.image.url, activeVariant.image.altText || product.title);
+      }
+    }
+  }
+
+  // ── Gallery ──
+  function setMainImage(url, alt) {
+    if (!mainImgEl) return;
+    var src = url.split('?')[0] + '?width=800&format=webp';
+    mainImgEl.src = src;
+    mainImgEl.alt = alt || '';
+    // Sync thumb active state
+    document.querySelectorAll('.pdp-thumb').forEach(function (t) {
+      t.classList.toggle('active', t.dataset.imgUrl === url.split('?')[0]);
+    });
+  }
+
+  // ── Render ──
+  function render() {
+    var wrap = document.getElementById('pdpWrap');
+
+    // Page title + breadcrumb
+    document.getElementById('pageTitle').textContent = product.title + ' | Freedom Green Energy';
+    document.getElementById('breadcrumbTitle').textContent = product.title;
+
+    images   = product.images.edges.map(function (e) { return e.node; });
+    variants = product.variants.edges.map(function (e) { return e.node; });
+
+    // Seed selectedOptions from first available variant
+    var firstAvail = variants.find(function (v) { return v.availableForSale; }) || variants[0];
+    if (firstAvail) {
+      firstAvail.selectedOptions.forEach(function (o) { selectedOptions[o.name] = o.value; });
+    }
+
+    // ── Gallery HTML ──
+    var mainImgSrc = images[0] ? images[0].url.split('?')[0] + '?width=800&format=webp' : '';
+    var mainImgAlt = images[0] ? (images[0].altText || product.title) : product.title;
+
+    var mainImgHtml = mainImgSrc
+      ? '<img id="pdpMainImg" src="' + mainImgSrc + '" alt="' + mainImgAlt.replace(/"/g, '&quot;') + '">'
+      : '<div class="pdp-img-placeholder"><svg width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>';
+
+    var thumbsHtml = images.length > 1
+      ? '<div class="pdp-thumbs">' + images.map(function (img, i) {
+          var baseUrl = img.url.split('?')[0];
+          return '<button class="pdp-thumb' + (i === 0 ? ' active' : '') + '" data-img-url="' + baseUrl + '" data-img-alt="' + (img.altText || product.title).replace(/"/g, '&quot;') + '" aria-label="View image ' + (i + 1) + '">'
+            + '<img src="' + baseUrl + '?width=120&format=webp" alt="">'
+            + '</button>';
+        }).join('') + '</div>'
+      : '';
+
+    // ── Options HTML ──
+    var optionsHtml = '';
+    if (product.options && product.options.length && !(product.options.length === 1 && product.options[0].values.length === 1)) {
+      optionsHtml = product.options.map(function (opt) {
+        return '<div class="pdp-option" data-option-name="' + opt.name + '">'
+          + '<div class="pdp-option-label">' + opt.name + ': <span class="pdp-option-selected" id="optVal_' + opt.name.replace(/\s/g, '_') + '">' + (selectedOptions[opt.name] || opt.values[0]) + '</span></div>'
+          + '<div class="pdp-option-pills">'
+          + opt.values.map(function (val) {
+              var isActive = selectedOptions[opt.name] === val;
+              // Check if any variant with this option value is available
+              var anyAvail = variants.some(function (v) {
+                return v.selectedOptions.some(function (o) { return o.name === opt.name && o.value === val; })
+                    && v.availableForSale;
+              });
+              return '<button class="pdp-pill' + (isActive ? ' active' : '') + (!anyAvail ? ' unavailable' : '') + '" data-option="' + opt.name + '" data-value="' + val + '">' + val + '</button>';
+            }).join('')
+          + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    // ── Price + stock from first available variant ──
+    var initPrice = firstAvail ? parseFloat(firstAvail.price.amount) : 0;
+    var initAvail = firstAvail ? firstAvail.availableForSale : false;
+    var priceHtml = initPrice > 0
+      ? '<span id="pdpPrice" class="pdp-price">£' + initPrice.toFixed(2) + '</span>'
+      : '<span id="pdpPrice" class="pdp-price-por">Price on request</span>';
+
+    // ── Vendor ──
+    var vendorHtml = product.vendor
+      ? '<p class="pdp-vendor">' + product.vendor + '</p>' : '';
+
+    // ── Description ──
+    var descHtml = product.descriptionHtml
+      ? '<hr class="pdp-divider"><p class="pdp-desc-label">Product Description</p><div class="pdp-desc">' + product.descriptionHtml + '</div>'
+      : '';
+
+    wrap.innerHTML =
+      // ── Left: Gallery ──
+      '<div class="pdp-gallery">'
+        + '<div class="pdp-main-img-wrap">' + mainImgHtml + '</div>'
+        + thumbsHtml
+      + '</div>'
+
+      // ── Right: Details ──
+      + '<div class="pdp-details">'
+        + vendorHtml
+        + '<h1 class="pdp-title">' + product.title + '</h1>'
+        + '<div class="pdp-stock-price">'
+          + priceHtml
+          + '<span id="pdpStock" class="product-stock ' + (initAvail ? 'in-stock' : 'out-of-stock') + '">' + (initAvail ? 'In Stock' : 'Out of Stock') + '</span>'
+        + '</div>'
+
+        + (optionsHtml ? '<hr class="pdp-divider">' + optionsHtml : '')
+
+        + '<hr class="pdp-divider">'
+        + '<div class="pdp-actions">'
+          + '<button id="pdpCartBtn" class="pdp-btn-cart"' + (!initAvail ? ' disabled' : '') + '>' + (initAvail ? 'Add to Cart' : 'Out of Stock') + '</button>'
+          + '<button id="pdpQuoteBtn" class="pdp-btn-quote">Add to Quote</button>'
+        + '</div>'
+
+        + '<div class="pdp-trust">'
+          + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Genuine OEM part — sourced direct from manufacturer</div>'
+          + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Same-day dispatch on in-stock items (order before 2pm)</div>'
+          + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nationwide UK delivery</div>'
+          + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Expert part ID support — <a href="tel:03337000275" style="color:var(--green-main)">call 0333 700 0275</a></div>'
+        + '</div>'
+
+        + descHtml
+      + '</div>';
+
+    // Cache the main image element
+    mainImgEl = document.getElementById('pdpMainImg');
+
+    // ── Thumbnail clicks ──
+    document.querySelectorAll('.pdp-thumb').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setMainImage(this.dataset.imgUrl, this.dataset.imgAlt);
+      });
+    });
+
+    // ── Option pill clicks ──
+    document.querySelectorAll('.pdp-pill:not(.unavailable)').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        var optName = this.dataset.option;
+        var optVal  = this.dataset.value;
+
+        selectedOptions[optName] = optVal;
+
+        // Update active pill in this option group
+        document.querySelectorAll('.pdp-option[data-option-name="' + optName + '"] .pdp-pill').forEach(function (p) {
+          p.classList.toggle('active', p.dataset.value === optVal);
+        });
+
+        // Update selected label
+        var labelEl = document.getElementById('optVal_' + optName.replace(/\s/g, '_'));
+        if (labelEl) labelEl.textContent = optVal;
+
+        syncActiveVariant();
+      });
+    });
+
+    // ── Cart button ──
+    document.getElementById('pdpCartBtn').addEventListener('click', function () {
+      if (!activeVariant) return;
+      if (window.FGECart) window.FGECart.addToCart(activeVariant.id, 1, this);
+    });
+
+    // ── Quote button ──
+    document.getElementById('pdpQuoteBtn').addEventListener('click', function () {
+      if (!activeVariant) return;
+      var btn = this;
+      if (window.FGEQuote) {
+        window.FGEQuote.addToQuote({
+          variantId:    activeVariant.id,
+          productId:    product.id,
+          title:        product.title,
+          variantTitle: activeVariant.title,
+          price:        parseFloat(activeVariant.price.amount),
+          handle:       product.handle,
+          imgUrl:       images[0] ? images[0].url.split('?')[0] + '?width=400&format=webp' : ''
+        });
+        btn.textContent = '✓ In Quote';
+        btn.classList.add('in-quote');
+      }
+    });
+
+    // Initial variant sync
+    activeVariant = firstAvail;
+  }
+
+  // ── Init ──
+  function init() {
+    var params = new URLSearchParams(window.location.search);
+    var handle = params.get('handle');
+
+    if (!handle) {
+      document.getElementById('pdpWrap').innerHTML =
+        '<div class="pdp-error"><p>No product specified. <a href="spare-parts.html" style="color:var(--green-main)">Browse all parts →</a></p></div>';
+      return;
+    }
+
+    fetchProduct(handle)
+      .then(function (p) {
+        if (!p) {
+          document.getElementById('pdpWrap').innerHTML =
+            '<div class="pdp-error"><p>Product not found. <a href="spare-parts.html" style="color:var(--green-main)">Browse all parts →</a></p></div>';
+          return;
+        }
+        product = p;
+        render();
+      })
+      .catch(function () {
+        document.getElementById('pdpWrap').innerHTML =
+          '<div class="pdp-error"><p>Unable to load product. Please <a href="tel:03337000275" style="color:var(--green-main)">call us</a> or <a href="spare-parts.html" style="color:var(--green-main)">browse all parts</a>.</p></div>';
+      });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
