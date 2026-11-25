@@ -80,7 +80,7 @@ a{color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 .eyebrow{
   font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--green-main);margin-bottom:14px;
+  color:var(--green-deep);margin-bottom:14px;
 }
 h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .h2{font-size:clamp(1.6rem,3.4vw,2.5rem);font-weight:800;margin-bottom:16px}
@@ -102,14 +102,14 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
   font-size:.76rem;font-weight:600;color:var(--muted);
   display:flex;align-items:center;gap:7px;
 }
-.lp-cred svg{color:var(--green-main);flex-shrink:0}
+.lp-cred svg{color:var(--green-deep);flex-shrink:0}
 .lp-call{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--green-deep);color:var(--white);text-decoration:none;
   font-weight:700;font-size:.92rem;padding:11px 18px;border-radius:var(--radius-sm);
   transition:background var(--transition);white-space:nowrap;
 }
-.lp-call:hover{background:var(--green-main)}
+.lp-call:hover{background:var(--green-deep-hover)}
 
 /* ── HERO ───────────────────────────────────────────────────────────────── */
 .hero{
@@ -251,7 +251,7 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
   font-size:.76rem;color:var(--muted);text-align:center;margin-top:14px;
   display:flex;align-items:center;justify-content:center;gap:6px;
 }
-.form-reassure svg{color:var(--green-main);flex-shrink:0}
+.form-reassure svg{color:var(--green-deep);flex-shrink:0}
 .form-error{
   display:none;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;
   border-radius:var(--radius-sm);padding:14px;font-size:.86rem;font-weight:600;margin-bottom:16px;
@@ -263,7 +263,7 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .form-done{text-align:center;padding:14px 0}
 .form-done .tick-lg{
   width:62px;height:62px;border-radius:50%;background:var(--green-pale);
-  color:var(--green-main);display:inline-flex;align-items:center;justify-content:center;
+  color:var(--green-deep);display:inline-flex;align-items:center;justify-content:center;
   margin-bottom:18px;
 }
 .form-done h2{font-size:1.4rem;font-weight:800;margin-bottom:10px}
@@ -286,7 +286,7 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
   display:flex;align-items:center;gap:9px;
   font-size:.82rem;font-weight:700;color:rgba(255,255,255,.88);
 }
-.cred-item svg{color:var(--green-mid);flex-shrink:0}
+.cred-item svg{color:var(--green-deep);flex-shrink:0}
 
 /* ── SECTIONS ───────────────────────────────────────────────────────────── */
 section{padding:72px 0}
@@ -310,7 +310,7 @@ section{padding:72px 0}
   display:flex;gap:9px;align-items:flex-start;
   border-top:1px solid var(--border);padding-top:14px;
 }
-.pain .fix svg{color:var(--green-main);flex-shrink:0;margin-top:3px}
+.pain .fix svg{color:var(--green-deep);flex-shrink:0;margin-top:3px}
 
 /* Benefit cards */
 .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -319,10 +319,10 @@ section{padding:72px 0}
   border-radius:var(--radius-md);padding:26px;
   transition:box-shadow var(--transition),transform var(--transition);
 }
-.benefit:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.benefit:hover{box-shadow:var(--shadow-md)}
 .benefit-icon{
   width:44px;height:44px;border-radius:var(--radius-sm);background:var(--green-pale);
-  color:var(--green-main);display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  color:var(--green-deep);display:flex;align-items:center;justify-content:center;margin-bottom:16px;
 }
 .benefit h3{font-size:1rem;font-weight:800;margin-bottom:9px}
 .benefit p{font-size:.88rem;color:var(--muted)}
@@ -364,7 +364,7 @@ section{padding:72px 0}
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{
-  content:'+';font-size:1.4rem;font-weight:400;color:var(--green-main);
+  content:'+';font-size:1.4rem;font-weight:400;color:var(--green-deep);
   line-height:1;flex-shrink:0;
 }
 .faq details[open] summary::after{content:'\2013'}

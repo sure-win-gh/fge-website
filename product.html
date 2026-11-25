@@ -16,7 +16,7 @@
       color: var(--muted);
     }
     .pdp-breadcrumb a { color: var(--muted); text-decoration: none; }
-    .pdp-breadcrumb a:hover { color: var(--green-main); }
+    .pdp-breadcrumb a:hover { color: var(--green-deep); }
     .pdp-breadcrumb span { margin: 0 6px; }
 
     .pdp-wrap {
@@ -89,7 +89,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--green-main);
+      color: var(--green-deep);
       margin-bottom: 10px;
     }
     .pdp-title {
@@ -181,7 +181,7 @@
     .pdp-btn-cart {
       flex: 1;
       padding: 15px 20px;
-      background: var(--green-main);
+      background: var(--green-deep);
       color: var(--white);
       border: none;
       border-radius: var(--radius-sm);
@@ -191,7 +191,7 @@
       cursor: pointer;
       transition: background var(--transition), transform var(--transition);
     }
-    .pdp-btn-cart:hover:not(:disabled) { background: var(--green-deep); transform: translateY(-1px); }
+    .pdp-btn-cart:hover:not(:disabled) { background: var(--green-deep-hover); }
     .pdp-btn-cart:disabled { opacity: 0.7; cursor: not-allowed; }
 
     .pdp-btn-quote {
@@ -207,7 +207,7 @@
       cursor: pointer;
       transition: background var(--transition), transform var(--transition);
     }
-    .pdp-btn-quote:hover { background: var(--amber-dark); transform: translateY(-1px); }
+    .pdp-btn-quote:hover { background: var(--amber-dark); }
     .pdp-btn-quote.in-quote {
       background: var(--green-pale);
       color: var(--green-deep);
@@ -233,7 +233,7 @@
       color: var(--slate);
       font-weight: 500;
     }
-    .pdp-trust-item svg { color: var(--green-main); flex-shrink: 0; }
+    .pdp-trust-item svg { color: var(--green-deep); flex-shrink: 0; }
 
     /* Description */
     .pdp-desc-label {
@@ -553,7 +553,7 @@
           + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Genuine OEM part — sourced direct from manufacturer</div>'
           + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Same-day dispatch on in-stock items (order before 2pm)</div>'
           + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nationwide UK delivery</div>'
-          + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Expert part ID support — <a href="tel:03337000275" style="color:var(--green-main)">call 0333 700 0275</a></div>'
+          + '<div class="pdp-trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Expert part ID support — <a href="tel:03337000275" style="color:var(--green-deep)">call 0333 700 0275</a></div>'
         + '</div>'
 
         + descHtml
@@ -626,7 +626,7 @@
 
     if (!handle) {
       document.getElementById('pdpWrap').innerHTML =
-        '<div class="pdp-error"><p>No product specified. <a href="spare-parts.html" style="color:var(--green-main)">Browse all parts →</a></p></div>';
+        '<div class="pdp-error"><p>No product specified. <a href="spare-parts.html" style="color:var(--green-deep)">Browse all parts →</a></p></div>';
       return;
     }
 
@@ -634,7 +634,7 @@
       .then(function (p) {
         if (!p) {
           document.getElementById('pdpWrap').innerHTML =
-            '<div class="pdp-error"><p>Product not found. <a href="spare-parts.html" style="color:var(--green-main)">Browse all parts →</a></p></div>';
+            '<div class="pdp-error"><p>Product not found. <a href="spare-parts.html" style="color:var(--green-deep)">Browse all parts →</a></p></div>';
           return;
         }
         product = p;
@@ -642,7 +642,7 @@
       })
       .catch(function () {
         document.getElementById('pdpWrap').innerHTML =
-          '<div class="pdp-error"><p>Unable to load product. Please <a href="tel:03337000275" style="color:var(--green-main)">call us</a> or <a href="spare-parts.html" style="color:var(--green-main)">browse all parts</a>.</p></div>';
+          '<div class="pdp-error"><p>Unable to load product. Please <a href="tel:03337000275" style="color:var(--green-deep)">call us</a> or <a href="spare-parts.html" style="color:var(--green-deep)">browse all parts</a>.</p></div>';
       });
   }
 

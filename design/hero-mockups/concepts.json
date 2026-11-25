@@ -1,0 +1,78 @@
+{
+  "home": {
+    "brand": "Freedom Green Energy",
+    "what": "the UK's authorised Froling biomass boiler distributor since 2012, supplying and supporting wood pellet, wood chip and log boilers and genuine spare parts for homes, farms and businesses",
+    "layout": "macro",
+    "subject": "A biomass boiler's round inspection window: thick heat-proof glass in a brushed steel ring set into a deep-green powder-coated boiler door, and behind the glass a bed of wood pellets burning with a clean, bright red-orange flame.",
+    "background": "Deep green powder-coated steel with a fine orange-peel texture and a few brushed-steel bolt heads.",
+    "light": "The product's own glow as the only light: the flame's red-orange light pours out of the window and rakes across the green steel door towards the left, where the headline sits, the far corners of the door falling to near black.",
+    "headline": "Sustainable heating",
+    "headline_note": "Set it in a wide, extended, heavy sans in sentence case across the left half, over the quiet green steel: \"Sustainable\" in cream, \"heating\" in the flame's red, lit by the glow spilling from the window. The headline sits clear of the window and no letter is hidden.",
+    "ui": "Wordmark \"Freedom Green\" top left. Nav \"Boilers\", \"Spare parts\", \"Installers\", \"Contact\" top centre. One cream pill button top right \"Order parts\". Under the headline one cream outline pill button \"Get a free quote\". Three small captions along the bottom left: \"7 to 1,500 kW\", \"Froling UK distributor since 2012\", \"0333 700 0275\". No announcement bar, no badges, no second nav row.",
+    "palette": [["Freedom Deep Green", "#3D5A1E"], ["Cream", "#F6F1E4"], ["Ember Red", "#D1302C"]],
+    "variations": [
+      "The window fills the right half of the frame, cut by the top and right edges; the flame burns still and even.",
+      "The camera is closer: only the lower two thirds of the window are in frame, cut by the right and bottom edges, the burning pellets crisp.",
+      "The moment the combustion fan kicks in: the flame leans and flares up towards the top of the glass, its light reaching further across the steel.",
+      "The camera is lower, looking slightly up into the window, so the flame bed sits high and the steel ring reads as a thick arc.",
+      "The whole window is in frame at the far right, and its glow sweeps across the full width of the door and off the left edge behind the headline."
+    ]
+  },
+  "parts": {
+    "brand": "Freedom Green Energy",
+    "what": "genuine OEM biomass boiler spare parts from UK stock, ordered online and dispatched the same day, for homeowners and heating engineers",
+    "layout": "word-behind",
+    "subject": "A single biomass boiler ignition element standing upright: a slim white ceramic rod with its heating coil glowing amber-yellow hot at the tip, a brass fitting at its base and a braided steel-sheathed cable trailing from it.",
+    "background": "Black ribbed rubber workshop bench mat with a fine film of dust.",
+    "light": "The product's own glow as the only light: the igniter's hot tip lights the rubber mat and the giant word behind it in a warm band that crosses the frame from the tip outwards, the braided cable catching thin highlights.",
+    "headline": "GENUINE",
+    "headline_note": "Set GENUINE as one giant heavy grotesk word across the full width, in white, evenly and tightly spaced as if the igniter were placed in front of it afterwards. The upright ceramic rod stands in front of the letter I and hides only that letter; every other letter stays whole. The letters nearest the glowing tip catch its amber light.",
+    "ui": "Wordmark \"Freedom Green\" top left. Nav \"Boilers\", \"Spare parts\", \"Installers\", \"Contact\" top right. Below the giant word, a wide dark search field with the placeholder \"Search part name or number\" and a white button \"Search\" at its right end. Three small captions along the bottom: \"Dispatched same day before 2pm\", \"Genuine OEM parts\", \"0333 700 0275\". No other buttons.",
+    "palette": [["Charcoal", "#111827"], ["White", "#FFFFFF"], ["Amber", "#F9CC3C"]],
+    "variations": [
+      "The igniter stands upright with its whole length in frame, the cable curling once on the mat and off the bottom right edge.",
+      "The camera is closer and lower: the igniter is cut by the bottom edge, its glowing tip big at the height of the tops of the letters.",
+      "The moment the coil reaches full heat: the tip at its brightest, a faint shimmer of heat haze rising above it.",
+      "The cable sweeps further, in a long S across the front of the mat from the igniter's base and off the left edge.",
+      "Seen a little from above, the igniter leaning a few degrees to the right, its glow spreading wider across the letters either side of the I."
+    ]
+  },
+  "woodchip": {
+    "brand": "Freedom Green Energy",
+    "what": "Froling wood chip boilers from 20 to 1,500 kW for farms, estates and commercial buildings, supplied and supported across the UK",
+    "layout": "left-headline",
+    "subject": "The red-painted steel front of a large commercial wood chip boiler with stainless trim and a small dark control touchscreen, and above it a cascade of pale, fresh wood chips pouring from the feed chute.",
+    "background": "Ivory limewashed plant-room wall with soft trowel marks, over a pale concrete floor.",
+    "light": "God rays through haze: shafts of morning light from a high plant-room window on the left fall across the boiler's red front and catch the falling chips and the dust in the air.",
+    "headline": "Heat the whole farm",
+    "headline_note": "Set it in a wide, extended, heavy sans in sentence case on two lines in the left half: \"Heat the whole\" in deep green, \"farm\" in the boiler's red. The headline sits clear of the boiler and no letter is hidden.",
+    "ui": "Wordmark \"Freedom Green\" top left. Nav \"Boilers\", \"Spare parts\", \"Installers\", \"Contact\" top right. One deep green pill button under the headline \"Get a free quote\". Three small captions along the bottom left: \"20 to 1,500 kW\", \"Up to 96.3% efficient\", \"MCS and HETAS approved\". No second button.",
+    "palette": [["Ivory", "#F6F1E4"], ["Freedom Deep Green", "#3D5A1E"], ["Boiler Red", "#D1302C"]],
+    "variations": [
+      "The boiler front fills the right half, cut by the top and right edges; the chips fall in a narrow, steady stream.",
+      "The camera is lower, looking up at the boiler so it towers, the chip cascade cut by the top edge.",
+      "The peak of the pour: the chips burst wider from the chute and scatter through the light shafts towards the headline.",
+      "The camera is closer: only the upper half of the red front and its touchscreen are in frame, the cascade sweeping down past it and off the bottom edge.",
+      "The whole boiler stands in frame at the right, the chip cascade sweeping from the top edge down behind it."
+    ]
+  },
+  "installers": {
+    "brand": "Freedom Green Energy",
+    "what": "trade accounts for biomass installers and service engineers: genuine parts at distributor prices, a named account manager and free part identification",
+    "layout": "split",
+    "subject": "A heating engineer in their forties, head and shoulders, wearing an amber hi-vis work jacket over a charcoal sweatshirt, weathered real skin, looking straight into the camera.",
+    "background": "Dark board-marked concrete plant-room wall.",
+    "light": "Two coloured gels, one from each side: a strong amber gel from the right modelling the face and the jacket, a dim cool-white gel from the left at half strength, the concrete behind falling to dark.",
+    "headline": "Trade prices",
+    "headline_note": "Set it in a heavy grotesk in sentence case, split across the frame: \"Trade\" in white on the left of the engineer, \"prices\" in amber on the right, both words at eye height, big, and clear of the engineer. No letter is hidden.",
+    "ui": "Wordmark \"Freedom Green\" top left and one link \"Call 0333 700 0275\" top right, no other nav. Under the headline, centred, a white text link with an arrow \"Open a trade account →\". Three small captions along the bottom: \"Froling distributor since 2012\", \"Free part identification\", \"Same-day dispatch before 2pm\".",
+    "palette": [["Concrete Black", "#111827"], ["White", "#FFFFFF"], ["Hi-vis Amber", "#F9CC3C"]],
+    "variations": [
+      "Head and shoulders, centred between the two words, cut by the bottom edge.",
+      "Closer: from mid-chest up, the jacket's amber filling the lower third of the frame, cut by the bottom edge.",
+      "A three-quarter turn to the right, into the amber gel, the jacket collar catching its strongest light.",
+      "The camera is a little lower, so the engineer looks down slightly into the lens and the two words sit at eye height either side.",
+      "Waist up with arms folded, the amber jacket covering more of the frame, still cut by the bottom edge."
+    ]
+  }
+}

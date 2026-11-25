@@ -70,7 +70,7 @@
       gap: 14px;
       transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
     }
-    .brand-card:hover { border-color: var(--green-main); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .brand-card:hover { border-color: var(--green-main); box-shadow: var(--shadow-lg); }
     .brand-card.featured { border-color: var(--green-light); background: linear-gradient(145deg, #f0faf4 0%, var(--white) 100%); }
     .brand-card.featured:hover { border-color: var(--green-main); }
     .brand-logo-area {
@@ -86,7 +86,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--green-main);
+      color: var(--green-deep);
       flex-shrink: 0;
     }
     .brand-stock-badge {
@@ -97,7 +97,7 @@
       padding: 4px 10px;
       border-radius: 100px;
       background: var(--green-pale);
-      color: var(--green-main);
+      color: var(--green-deep);
     }
     .brand-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--charcoal); }
     .brand-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; flex: 1; }
@@ -107,7 +107,7 @@
       gap: 6px;
       font-size: 0.82rem;
       font-weight: 700;
-      color: var(--green-main);
+      color: var(--green-deep);
     }
     .brand-card-arrow::after { content: '→'; transition: transform var(--transition); }
     .brand-card:hover .brand-card-arrow::after { transform: translateX(4px); }
@@ -128,7 +128,7 @@
     .step-num {
       width: 56px;
       height: 56px;
-      background: var(--green-main);
+      background: var(--green-deep);
       color: var(--white);
       border-radius: 50%;
       display: flex;
@@ -226,7 +226,7 @@
       flex-direction: column;
       transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
     }
-    .product-card:hover { border-color: var(--green-main); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .product-card:hover { border-color: var(--green-main); box-shadow: var(--shadow-lg); }
     .product-img-wrap {
       aspect-ratio: 1;
       background: var(--surface);
@@ -254,11 +254,11 @@
       border-radius: 100px;
       align-self: flex-start;
     }
-    .product-stock.in-stock { background: var(--green-pale); color: var(--green-main); }
+    .product-stock.in-stock { background: var(--green-pale); color: var(--green-deep); }
     .product-stock.out-of-stock { background: #fff3cd; color: #856404; }
     .product-title { font-size: 0.87rem; font-weight: 700; color: var(--charcoal); line-height: 1.4; flex: 1; }
     .product-price { font-size: 1.05rem; font-weight: 800; color: var(--green-deep); }
-    .product-cta { font-size: 0.8rem; font-weight: 700; color: var(--green-main); margin-top: 4px; }
+    .product-cta { font-size: 0.8rem; font-weight: 700; color: var(--green-deep); margin-top: 4px; }
     .parts-loading, .parts-error, .parts-empty {
       grid-column: 1 / -1;
       text-align: center;
@@ -279,7 +279,7 @@
     .btn-load-more {
       background: none;
       border: 2px solid var(--green-main);
-      color: var(--green-main);
+      color: var(--green-deep);
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       font-weight: 700;
@@ -288,7 +288,7 @@
       cursor: pointer;
       transition: background var(--transition), color var(--transition);
     }
-    .btn-load-more:hover { background: var(--green-main); color: var(--white); }
+    .btn-load-more:hover { background: var(--green-deep-hover); color: var(--white); }
   </style>
 
   <!-- Schema: Organization + FAQ -->
@@ -507,28 +507,28 @@
     </div>
     <div class="card-grid card-grid-4" style="margin-top:0;">
       <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-main);margin-bottom:16px;">
+        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Guaranteed Genuine Parts</h3>
         <p>Every part we supply is 100% genuine OEM. No cheap imitations, no compatibility risks, no voided warranties. Genuine parts mean longer life and better performance.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-main);margin-bottom:16px;">
+        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
         <h3>Rapid UK Dispatch</h3>
         <p>Extensive UK warehouse stock means most common parts ship the same day. Order before 2pm and we'll dispatch next working day delivery anywhere in the UK.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-main);margin-bottom:16px;">
+        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
         <h3>Expert Technical Support</h3>
         <p>Not sure which part you need? Our technical team has hands-on experience with every Froling and Herz model. We'll identify the right part from a photo, model number, or description.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-main);margin-bottom:16px;">
+        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
         <h3>Trade Accounts Available</h3>
@@ -901,7 +901,7 @@
     function renderCards(products, append) {
       if (!append) grid.innerHTML = '';
       if (!products.length && !append) {
-        grid.innerHTML = '<div class="parts-empty">No parts found matching your search. <a href="tel:03337000275" style="color:var(--green-main);">Call us</a> and we\'ll track down what you need.</div>';
+        grid.innerHTML = '<div class="parts-empty">No parts found matching your search. <a href="tel:03337000275" style="color:var(--green-deep);">Call us</a> and we\'ll track down what you need.</div>';
         countEl.textContent = '';
         return;
       }
@@ -961,7 +961,7 @@
         renderCards(allProducts, false);
         loadMoreWrap.style.display = hasMore ? 'block' : 'none';
       } catch (e) {
-        grid.innerHTML = '<div class="parts-error">Unable to load parts catalogue. Please <a href="tel:03337000275" style="color:var(--green-main);">call us</a> or <a href="mailto:info@freedomgreen.co.uk" style="color:var(--green-main);">email</a> your enquiry.</div>';
+        grid.innerHTML = '<div class="parts-error">Unable to load parts catalogue. Please <a href="tel:03337000275" style="color:var(--green-deep);">call us</a> or <a href="mailto:info@freedomgreen.co.uk" style="color:var(--green-deep);">email</a> your enquiry.</div>';
       }
       loading = false;
     }
