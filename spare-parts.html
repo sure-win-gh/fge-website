@@ -8,113 +8,15 @@
   <link rel="canonical" href="https://freedomgreen.co.uk/spare-parts.html" />
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    /* ── SPARE PARTS — Page-specific styles ── */
-    .hero-parts {
-      position: relative;
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--green-deep);
-    }
-    .hero-parts .hero-bg-img {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
-    .hero-parts .hero-bg {
+.hero-parts .hero-bg {
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, rgba(61,90,30,0.93) 0%, rgba(135,169,70,0.80) 60%, rgba(155,186,88,0.55) 100%);
       z-index: 1;
     }
-    .hero-parts .hero-content {
-      grid-template-columns: 1fr;
-      max-width: 740px;
-    }
-    .hero-parts .hero-content h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
-    .hero-parts .hero-content p { max-width: 600px; }
 
-    /* Dispatch badge */
-    .dispatch-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(249,204,60,0.15);
-      border: 1px solid rgba(249,204,60,0.45);
-      color: var(--amber);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 22px;
-    }
-    .dispatch-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); animation: pulse 1.8s ease-in-out infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
-
-    /* Brand cards */
-    .brand-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 22px; }
-    .brand-card {
-      background: var(--white);
-      border: 2px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 32px 28px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-    }
-    .brand-card:hover { border-color: var(--green-main); box-shadow: var(--shadow-lg); }
-    .brand-card.featured { border-color: var(--green-light); background: linear-gradient(145deg, #f0faf4 0%, var(--white) 100%); }
-    .brand-card.featured:hover { border-color: var(--green-main); }
-    .brand-logo-area {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--green-pale);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--green-deep);
-      flex-shrink: 0;
-    }
-    .brand-stock-badge {
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      padding: 4px 10px;
-      border-radius: 100px;
-      background: var(--green-pale);
-      color: var(--green-deep);
-    }
-    .brand-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--charcoal); }
-    .brand-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; flex: 1; }
-    .brand-card-arrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--green-deep);
-    }
-    .brand-card-arrow::after { content: '→'; transition: transform var(--transition); }
-    .brand-card:hover .brand-card-arrow::after { transform: translateX(4px); }
-
-    /* Process steps */
-    .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; }
-    .process-steps::before {
+.process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; }
+.process-steps::before {
       content: '';
       position: absolute;
       top: 28px;
@@ -124,8 +26,8 @@
       background: var(--border);
       z-index: 0;
     }
-    .process-step { text-align: center; position: relative; z-index: 1; }
-    .step-num {
+.process-step { text-align: center; position: relative; z-index: 1; }
+.step-num {
       width: 56px;
       height: 56px;
       background: var(--green-deep);
@@ -134,88 +36,51 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      font-size: var(--fs-22);
       font-weight: 900;
       margin: 0 auto 20px;
       box-shadow: 0 4px 16px rgba(135,169,70,0.3);
     }
-    .process-step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
-    .process-step p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
-
-    /* FAQ */
-    .faq-list { display: flex; flex-direction: column; gap: 4px; max-width: 760px; margin: 0 auto; }
-    .faq-item {
+.process-step h3 { font-size: var(--fs-16); font-weight: 700; margin-bottom: 8px; }
+.process-step p { font-size: var(--fs-14); color: var(--muted); line-height: 1.6; }
+.faq-list { display: flex; flex-direction: column; gap: 4px; max-width: 760px; margin: 0 auto; }
+.faq-item {
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       overflow: hidden;
       background: var(--white);
     }
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 18px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--charcoal);
-      text-align: left;
-      transition: background var(--transition);
-    }
-    .faq-question:hover { background: var(--surface); }
-    .faq-question[aria-expanded="true"] { background: var(--green-pale); color: var(--green-deep); }
-    .faq-icon { width: 22px; height: 22px; flex-shrink: 0; transition: transform var(--transition); }
-    .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
-    .faq-answer {
-      display: none;
-      padding: 0 22px 18px;
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .faq-answer.open { display: block; }
-
-    /* Parts overview section */
-    .parts-section { background: var(--surface); }
-
-    @media (max-width: 900px) {
-      .process-steps { grid-template-columns: 1fr; }
-      .process-steps::before { display: none; }
-    }
-
-    /* ── SHOPIFY PARTS CATALOGUE ── */
-    .parts-search-wrap {
+@media (max-width: 900px) {
+  .process-steps { grid-template-columns: 1fr; }
+  .process-steps::before { display: none; }
+}
+.parts-search-wrap {
       display: flex;
       gap: 12px;
       align-items: center;
       margin-bottom: 16px;
       flex-wrap: wrap;
     }
-    .parts-search-input {
+.parts-search-input {
       flex: 1;
       min-width: 240px;
       padding: 13px 18px;
       border: 2px solid var(--border);
       border-radius: var(--radius-sm);
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: var(--fs-14);
       color: var(--charcoal);
       background: var(--white);
       transition: border-color var(--transition);
     }
-    .parts-search-input:focus { outline: none; border-color: var(--green-main); }
-    .parts-count { font-size: 0.82rem; color: var(--muted); margin-bottom: 24px; }
-    .parts-grid {
+.parts-search-input:focus { outline: 3px solid var(--amber); outline-offset: 2px; border-color: var(--white); }
+.parts-count { font-size: var(--fs-14); color: var(--muted); margin-bottom: 24px; }
+.parts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      grid-template-columns: repeat(3, 1fr);   /* 24 per page and today's 6 both fill whole rows */
       gap: 20px;
     }
-    .product-card {
+.product-card {
       background: var(--white);
       border: 2px solid var(--border);
       border-radius: var(--radius-md);
@@ -226,8 +91,8 @@
       flex-direction: column;
       transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
     }
-    .product-card:hover { border-color: var(--green-main); box-shadow: var(--shadow-lg); }
-    .product-img-wrap {
+.product-card:hover { border-color: var(--green-main); box-shadow: var(--shadow-lg); }
+.product-img-wrap {
       aspect-ratio: 1;
       background: var(--surface);
       overflow: hidden;
@@ -235,18 +100,17 @@
       align-items: center;
       justify-content: center;
     }
-    .product-img-wrap img {
+.product-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       padding: 12px;
       transition: transform var(--transition);
     }
-    .product-card:hover .product-img-wrap img { transform: scale(1.05); }
-    .product-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--muted); }
-    .product-info { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-    .product-stock {
-      font-size: 0.67rem;
+.product-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--muted); }
+.product-info { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.product-stock {
+      font-size: var(--fs-12);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.07em;
@@ -254,19 +118,19 @@
       border-radius: 100px;
       align-self: flex-start;
     }
-    .product-stock.in-stock { background: var(--green-pale); color: var(--green-deep); }
-    .product-stock.out-of-stock { background: #fff3cd; color: #856404; }
-    .product-title { font-size: 0.87rem; font-weight: 700; color: var(--charcoal); line-height: 1.4; flex: 1; }
-    .product-price { font-size: 1.05rem; font-weight: 800; color: var(--green-deep); }
-    .product-cta { font-size: 0.8rem; font-weight: 700; color: var(--green-deep); margin-top: 4px; }
-    .parts-loading, .parts-error, .parts-empty {
+.product-stock.in-stock { background: var(--green-pale); color: var(--green-deep); }
+.product-stock.out-of-stock { background: #fff3cd; color: #856404; }
+.product-title { font-size: var(--fs-14); font-weight: 700; color: var(--charcoal); line-height: 1.4; flex: 1; }
+.product-price { font-size: var(--fs-16); font-weight: 800; color: var(--green-deep); }
+.product-cta { font-size: var(--fs-12); font-weight: 700; color: var(--green-deep); margin-top: 4px; }
+.parts-loading, .parts-error, .parts-empty {
       grid-column: 1 / -1;
       text-align: center;
       padding: 60px 20px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: var(--fs-14);
     }
-    .parts-spinner {
+.parts-spinner {
       width: 32px; height: 32px;
       border: 3px solid var(--border);
       border-top-color: var(--green-main);
@@ -274,21 +138,21 @@
       animation: sp-spin 0.8s linear infinite;
       margin: 0 auto 16px;
     }
-    @keyframes sp-spin { to { transform: rotate(360deg); } }
-    .parts-load-more-wrap { text-align: center; margin-top: 40px; }
-    .btn-load-more {
+@keyframes sp-spin { to { transform: rotate(360deg); } }
+.parts-load-more-wrap { text-align: center; margin-top: 40px; }
+.btn-load-more {
       background: none;
       border: 2px solid var(--green-main);
       color: var(--green-deep);
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: var(--fs-14);
       font-weight: 700;
       padding: 12px 32px;
       border-radius: var(--radius-sm);
       cursor: pointer;
       transition: background var(--transition), color var(--transition);
     }
-    .btn-load-more:hover { background: var(--green-deep-hover); color: var(--white); }
+.btn-load-more:hover { background: var(--green-deep-hover); color: var(--white); }
   </style>
 
   <!-- Schema: Organization + FAQ -->
@@ -356,20 +220,20 @@
 <body>
 <script src="assets/nav.js"></script>
 <!-- HERO -->
-<section class="hero-parts">
-  <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80');"></div>
+<section class="hero-parts product-hero">
   <div class="hero-bg"></div>
-  <div class="hero-content" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:80px 40px;width:100%;">
+  <div class="hero-content">
     <div style="max-width:680px;">
-      <div class="dispatch-badge">Same-day dispatch on in-stock items</div>
-      <h1 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:22px;">Biomass Boiler Spare Parts. <em style="font-style:normal;color:var(--amber);">Genuine OEM.</em> UK Stock.</h1>
-      <p style="font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:36px;max-width:560px;">Authorised UK supplier of genuine spare parts for Froling, Herz and other leading biomass boiler brands. Get your system back online fast, with expert part identification, extensive UK stock, and nationwide delivery.</p>
-      <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="#parts-catalogue" class="btn-primary">Browse &amp; Order Parts</a>
-        <a href="tel:03337000275" class="btn-outline">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          Call 0333 700 0275
-        </a>
+      <h1 style="font-size:var(--fs-48);font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;">Biomass Boiler Spare Parts. <em style="font-style:normal;color:var(--green-light);">Genuine OEM.</em> UK Stock.</h1>
+      <p style="font-size:var(--fs-16);color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:24px;max-width:560px;">Authorised UK supplier of genuine spare parts for Froling, Herz and other leading biomass boiler brands.</p>
+      <div class="parts-search-wrap">
+        <label for="partsSearch" class="sr-only">Search parts by name or number</label>
+        <input type="search" id="partsSearch" class="parts-search-input" placeholder="Search by part name or number…" autocomplete="off" />
+      </div>
+      <nav class="brand-chips" aria-label="Parts by boiler brand">
+        <a href="spare-parts-froling.html">Froling</a><a href="spare-parts-herz.html">Herz</a><a href="spare-parts-binda.html">Binda</a><a href="spare-parts-other.html">Other brands</a>
+      </nav>
+      <p class="hero-help">Not sure which part? <a href="#enquiry">Send us your boiler details</a> or call <a href="tel:03337000275">0333 700 0275</a>.</p>
       </div>
     </div>
   </div>
@@ -412,78 +276,12 @@
 </div>
 
 <!-- BRAND SELECTOR -->
-<section id="brands" style="padding:80px 40px;background:var(--white);">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Shop by Brand</div>
-      <h2 class="section-title">Which boiler brand do you need parts for?</h2>
-      <p class="section-sub">Select your boiler brand below to view our full parts range. Not sure? Call our technical team and we'll identify the exact part you need.</p>
-    </div>
-    <div class="brand-cards">
 
-      <a href="spare-parts-froling.html" class="brand-card featured">
-        <div class="brand-logo-area">
-          <div class="brand-icon">
-            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2C12 2 5 7.5 5 13a7 7 0 0014 0c0-5.5-7-11-7-11z"/><path d="M12 9v7M9.5 14l2.5 2 2.5-2"/></svg>
-          </div>
-          <span class="brand-stock-badge">Extensive UK Stock</span>
-        </div>
-        <h3>Froling Spare Parts</h3>
-        <p>Genuine OEM spare parts for all Froling biomass boilers - pellet, wood chip, log and commercial systems. As authorised UK distributors, we hold the UK's most comprehensive Froling parts stock.</p>
-        <span class="brand-card-arrow">Browse Froling Parts</span>
-      </a>
-
-      <a href="spare-parts-herz.html" class="brand-card featured">
-        <div class="brand-logo-area">
-          <div class="brand-icon">
-            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M12 8v8"/></svg>
-          </div>
-          <span class="brand-stock-badge">UK Stock</span>
-        </div>
-        <h3>Herz Spare Parts</h3>
-        <p>Original parts for Herz pelletstar, firematic, firestar, BioFire and heat pump systems. Sourced direct from Herz Energietechnik to guarantee genuine quality and system compatibility.</p>
-        <span class="brand-card-arrow">Browse Herz Parts</span>
-      </a>
-
-      <a href="spare-parts-binda.html" class="brand-card">
-        <div class="brand-logo-area">
-          <div class="brand-icon">
-            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </div>
-          <span class="brand-stock-badge">Available</span>
-        </div>
-        <h3>Binda Spare Parts</h3>
-        <p>Replacement parts for Binda biomass conveying and fuel handling systems. Keep your fuel feed running reliably with genuine Binda components.</p>
-        <span class="brand-card-arrow">Enquire About Parts</span>
-      </a>
-
-      <a href="spare-parts-other.html" class="brand-card">
-        <div class="brand-logo-area">
-          <div class="brand-icon">
-            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-          </div>
-          <span class="brand-stock-badge">On Request</span>
-        </div>
-        <h3>Other Brands</h3>
-        <p>Can't find your brand above? We can source parts for many other biomass boiler manufacturers. Send us your boiler model and serial number and we'll track down the parts you need.</p>
-        <span class="brand-card-arrow">Submit an Enquiry</span>
-      </a>
-
-    </div>
-  </div>
-</section>
 
 <!-- SHOPIFY PARTS CATALOGUE -->
-<section id="parts-catalogue" style="padding:80px 40px;background:var(--surface);">
+<section id="parts-catalogue" class="parts-catalogue">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Live Parts Catalogue</div>
-      <h2 class="section-title">Browse &amp; order spare parts online</h2>
-      <p class="section-sub">Genuine OEM biomass boiler spare parts available to order online. In-stock items dispatched same day when ordered before 2pm.</p>
-    </div>
-    <div class="parts-search-wrap">
-      <input type="search" id="partsSearch" class="parts-search-input" placeholder="Search by part name or number…" autocomplete="off" />
-    </div>
+    <h2 class="sr-only">Parts catalogue</h2>
     <p class="parts-count" id="partsCount"></p>
     <div id="partsGrid" class="parts-grid">
       <div class="parts-loading">
@@ -498,98 +296,16 @@
 </section>
 
 <!-- WHY BUY FROM US -->
-<section class="parts-section" style="padding:80px 40px;">
-  <div class="container">
-    <div class="section-header centered">
-      <div class="section-label">Why Choose Freedom Green</div>
-      <h2 class="section-title">The UK's most trusted<br/>biomass parts supplier</h2>
-      <p class="section-sub" style="margin:0 auto;">With over 12 years as authorised Froling distributors, we know biomass boilers inside out — and we have the parts to prove it.</p>
-    </div>
-    <div class="card-grid card-grid-4" style="margin-top:0;">
-      <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Guaranteed Genuine Parts</h3>
-        <p>Every part we supply is 100% genuine OEM. No cheap imitations, no compatibility risks, no voided warranties. Genuine parts mean longer life and better performance.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <h3>Rapid UK Dispatch</h3>
-        <p>Extensive UK warehouse stock means most common parts ship the same day. Order before 2pm and we'll dispatch next working day delivery anywhere in the UK.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <h3>Expert Technical Support</h3>
-        <p>Not sure which part you need? Our technical team has hands-on experience with every Froling and Herz model. We'll identify the right part from a photo, model number, or description.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="width:44px;height:44px;background:var(--green-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--green-deep);margin-bottom:16px;">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <h3>Trade Accounts Available</h3>
-        <p>Heating engineers and installers can apply for a trade account with preferential pricing, credit terms, and a dedicated account manager. Enquire today to get set up.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- HOW TO ORDER -->
-<section style="padding:80px 40px;background:var(--green-deep);">
-  <div class="container">
-    <div class="section-header centered">
-      <div class="section-label" style="color:var(--amber);">Simple Ordering Process</div>
-      <h2 class="section-title" style="color:var(--white);">Get your parts in<br/>three easy steps</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto;">Whether you know exactly what you need or require help identifying the right part, we make the process quick and straightforward.</p>
-    </div>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <h3 style="color:var(--white);">Identify Your Part</h3>
-        <p style="color:rgba(255,255,255,0.65);">Browse our online store by brand and model, or contact our technical team with your boiler model number, serial number, or a photo of the part you need.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <h3 style="color:var(--white);">Place Your Order</h3>
-        <p style="color:rgba(255,255,255,0.65);">Order securely online, by phone on 0333 700 0275, or by email. We'll confirm stock availability, pricing, and estimated dispatch time straight away.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <h3 style="color:var(--white);">Fast UK Delivery</h3>
-        <p style="color:rgba(255,255,255,0.65);">In-stock items dispatched same day (before 2pm). Next working day delivery available across mainland UK. Tracked shipment with full delivery notification.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ENQUIRY CTA BAND -->
-<div class="cta-band" id="enquiry">
-  <div class="cta-inner">
-    <div class="cta-text">
-      <div class="cta-label">Get Parts Fast</div>
-      <h2>Know what you need?<br/>Enquire now for a fast quote.</h2>
-      <p>Call our team directly or send us your part number, boiler model, and quantity. We'll come back to you with availability, pricing, and dispatch date — usually within the hour.</p>
-    </div>
-    <div class="cta-actions">
-      <a href="tel:03337000275" class="btn-white">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        Call 0333 700 0275
-      </a>
-      <a href="mailto:info@freedomgreen.co.uk" class="btn-ghost-white">Email an Enquiry</a>
-    </div>
-  </div>
-</div>
-
-<!-- ENQUIRY FORM -->
-<section style="padding:80px 40px;background:var(--surface);">
+<section id="enquiry" style="background:var(--white);">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <div class="section-label">Parts Enquiry</div>
         <h2 class="section-title">Not sure what you need?<br/>We'll identify it for you.</h2>
         <p class="section-sub" style="margin-bottom:36px;">Send us your boiler details and describe the fault or part you're looking for. Our engineers will identify the exact part, confirm availability, and provide a quote — fast.</p>
         <div class="contact-detail">
@@ -629,19 +345,19 @@
           <div class="form-grid">
             <div class="form-group">
               <label for="first-name">First Name</label>
-              <input type="text" id="first-name" name="first-name" placeholder="John" />
+              <input type="text" id="first-name" name="first-name" autocomplete="given-name" placeholder="John" />
             </div>
             <div class="form-group">
               <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="last-name" placeholder="Smith" />
+              <input type="text" id="last-name" name="last-name" autocomplete="family-name" placeholder="Smith" />
             </div>
             <div class="form-group">
               <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="john@example.com" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="07700 000000" />
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" />
             </div>
             <div class="form-group full">
               <label for="brand">Boiler Brand *</label>
@@ -663,81 +379,58 @@
             </div>
           </div>
           <button type="submit" class="btn-submit">Send Parts Enquiry →</button>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:12px;text-align:center;">We typically respond within 1 hour during business hours. Urgent? Call us on 0333 700 0275.</p>
+          <p style="font-size:var(--fs-12);color:var(--muted);margin-top:12px;text-align:center;">We typically respond within 1 hour during business hours. Urgent? Call us on 0333 700 0275.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section style="padding:80px 40px;background:var(--white);">
+<section style="background:var(--green-deep);">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">Common Questions</div>
+      <h2 class="section-title" style="color:var(--white);">Get your parts in<br/>three easy steps</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto;">Whether you know exactly what you need or require help identifying the right part, we make the process quick and straightforward.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3 style="color:var(--white);">Identify Your Part</h3>
+        <p style="color:rgba(255,255,255,0.65);">Browse our online store by brand and model, or contact our technical team with your boiler model number, serial number, or a photo of the part you need.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3 style="color:var(--white);">Place Your Order</h3>
+        <p style="color:rgba(255,255,255,0.65);">Order securely online, by phone on 0333 700 0275, or by email. We'll confirm stock availability, pricing, and estimated dispatch time straight away.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3 style="color:var(--white);">Fast UK Delivery</h3>
+        <p style="color:rgba(255,255,255,0.65);">In-stock items dispatched same day (before 2pm). Next working day delivery available across mainland UK. Tracked shipment with full delivery notification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="section-header centered">
       <h2 class="section-title">Biomass spare parts —<br/>frequently asked questions</h2>
     </div>
     <div class="faq-list">
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          How quickly are biomass boiler spare parts dispatched?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          In-stock items ordered before 2pm on a working day are dispatched the same day for next working day delivery. We hold extensive UK stock of Froling and Herz spare parts to minimise your boiler's downtime. Saturday and express delivery options are also available — call to arrange.
-        </div>
-      </div>
+      <details class="faq-item" name="faq" open><summary class="faq-question">How quickly are biomass boiler spare parts dispatched?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">In-stock items ordered before 2pm on a working day are dispatched the same day for next working day delivery. We hold extensive UK stock of Froling and Herz spare parts to minimise your boiler's downtime. Saturday and express delivery options are also available — call to arrange.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Are your biomass spare parts genuine OEM parts?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          Yes — every part we supply is 100% genuine, original equipment manufacturer (OEM). As an authorised Froling UK distributor since 2012, we supply only genuine Froling spare parts. Our Herz parts are also sourced directly from Herz Energietechnik. Using genuine parts protects your boiler's warranty and ensures maximum safety and performance.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">Are your biomass spare parts genuine OEM parts?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Yes — every part we supply is 100% genuine, original equipment manufacturer (OEM). As an authorised Froling UK distributor since 2012, we supply only genuine Froling spare parts. Our Herz parts are also sourced directly from Herz Energietechnik. Using genuine parts protects your boiler's warranty and ensures maximum safety and performance.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          What if I don't know my part number?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          No problem at all. Call our technical team on 0333 700 0275, or submit an enquiry with your boiler make, model, serial number, and a description or photo of the part. Our engineers will identify the correct part and advise on installation if needed — at no extra charge.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">What if I don't know my part number?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">No problem at all. Call our technical team on 0333 700 0275, or submit an enquiry with your boiler make, model, serial number, and a description or photo of the part. Our engineers will identify the correct part and advise on installation if needed — at no extra charge.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Do you supply parts for older biomass boiler models?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          We stock parts for a wide range of current and legacy Froling and Herz models. If a part is not in our standard UK stock, we can typically source it direct from the manufacturer within a few working days. Contact us with your boiler serial number and we'll confirm availability.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">Do you supply parts for older biomass boiler models?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">We stock parts for a wide range of current and legacy Froling and Herz models. If a part is not in our standard UK stock, we can typically source it direct from the manufacturer within a few working days. Contact us with your boiler serial number and we'll confirm availability.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Can heating engineers and installers set up a trade account?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          Absolutely. We offer trade accounts for professional heating engineers and installation companies, with preferential pricing, credit terms, and a dedicated account manager. Contact our team on 0333 700 0275 or email info@freedomgreen.co.uk to get set up.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">Can heating engineers and installers set up a trade account?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Absolutely. We offer trade accounts for professional heating engineers and installation companies, with preferential pricing, credit terms, and a dedicated account manager. Contact our team on 0333 700 0275 or email info@freedomgreen.co.uk to get set up.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Do you offer technical support alongside parts supply?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          Yes. As authorised distributors with over 12 years' experience, our technical team can advise on fault diagnosis, part replacement procedures, and commissioning for most Froling and Herz systems. We also offer on-site service and maintenance — contact us for details.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">Do you offer technical support alongside parts supply?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Yes. As authorised distributors with over 12 years' experience, our technical team can advise on fault diagnosis, part replacement procedures, and commissioning for most Froling and Herz systems. We also offer on-site service and maintenance — contact us for details.</div></details>
 
     </div>
   </div>
@@ -751,13 +444,6 @@
         <img class="logo-img" src="assets/img/logo-white.png" width="224" height="138" alt="Freedom Green Energy &#8212; Renewable Energy Technologies" />
       </div>
       <p>Authorised UK distributors for Froling biomass boilers since 2012. Genuine OEM spare parts for Froling, Herz and other leading biomass heating brands.</p>
-      <div class="footer-newsletter">
-        <p>Stay updated with news, offers and product launches:</p>
-        <div class="newsletter-form">
-          <input type="email" name="newsletter-email" placeholder="Your email address" />
-          <button type="button">Subscribe</button>
-        </div>
-      </div>
     </div>
     <div class="footer-col">
       <h4>Spare Parts</h4>
@@ -785,18 +471,18 @@
       <ul>
         <li><a href="about.html">About Freedom Green</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="installer-services.html">Installer Services</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
+        <li><a href="installers.html">Installer Services</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms of Service</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Freedom Green Energy Ltd. All rights reserved. Froling Authorised UK Distributor.</p>
     <div class="footer-bottom-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Cookies</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy</a>
+      <a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Cookies</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -872,7 +558,7 @@
 
       const priceHtml = minPrice > 0
         ? '<div class="product-price">£' + minPrice.toFixed(2) + (multiVariant ? '+' : '') + '</div>'
-        : '<div class="product-price" style="color:var(--muted);font-size:0.82rem;">Price on request</div>';
+        : '<div class="product-price" style="color:var(--muted);font-size:var(--fs-14);">Price on request</div>';
 
       const cartLabel  = multiVariant ? 'Select Options' : 'Add to Cart';
       const quoteLabel = multiVariant ? 'Get a Quote'    : 'Add to Quote';
@@ -892,8 +578,8 @@
         + '</div>'
         + '</a>'
         + '<div class="product-actions">'
-        + '<button class="btn-add-cart">' + cartLabel + '</button>'
-        + '<button class="btn-add-quote"' + quoteAttr + '>' + quoteLabel + '</button>'
+        + (avail ? '<button class="btn-add-cart">' + cartLabel + '</button>'
+                 : '<button class="btn-add-quote"' + quoteAttr + '>' + quoteLabel + '</button>')
         + '</div>'
         + '</div>';
     }
@@ -958,8 +644,7 @@
         allProducts = result.edges.map(e => e.node);
         cursor  = result.pageInfo.endCursor;
         hasMore = result.pageInfo.hasNextPage;
-        renderCards(allProducts, false);
-        loadMoreWrap.style.display = hasMore ? 'block' : 'none';
+        filterAndRender();
       } catch (e) {
         grid.innerHTML = '<div class="parts-error">Unable to load parts catalogue. Please <a href="tel:03337000275" style="color:var(--green-deep);">call us</a> or <a href="mailto:info@freedomgreen.co.uk" style="color:var(--green-deep);">email</a> your enquiry.</div>';
       }
@@ -1005,6 +690,9 @@
     });
 
     loadMoreBtn.addEventListener('click', loadMore);
+    // Header search lands here as spare-parts.html?q=…
+    var q = new URLSearchParams(location.search).get('q');
+    if (q) { searchInput.value = q; searchTerm = q.trim(); document.getElementById('parts-catalogue').scrollIntoView(); }
     init();
   })();
 </script>
@@ -1135,24 +823,6 @@
     // Expose so the catalogue script can call it
     window.openVariantModal = openVariantModal;
   })();
-</script>
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      // Close all
-      document.querySelectorAll('.faq-question').forEach(b => {
-        b.setAttribute('aria-expanded', 'false');
-        b.nextElementSibling.classList.remove('open');
-      });
-      // Open clicked (if it wasn't already open)
-      if (!expanded) {
-        btn.setAttribute('aria-expanded', 'true');
-        btn.nextElementSibling.classList.add('open');
-      }
-    });
-  });
 </script>
 </body>
 </html>

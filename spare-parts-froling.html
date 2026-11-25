@@ -8,124 +8,23 @@
   <link rel="canonical" href="https://freedomgreen.co.uk/spare-parts-froling.html" />
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    /* ── HERO COMPACT ── */
-    .hero-parts {
-      position: relative;
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--green-deep);
-    }
-    .hero-parts .hero-bg-img {
-      position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      z-index: 0;
-    }
-    .hero-parts .hero-bg {
+.hero-parts .hero-bg {
       position: absolute; inset: 0;
       background: linear-gradient(135deg, rgba(61,90,30,0.94) 0%, rgba(135,169,70,0.80) 55%, rgba(155,186,88,0.5) 100%);
       z-index: 1;
     }
-    .hero-parts-inner {
-      position: relative; z-index: 2;
-      max-width: 1280px; margin: 0 auto;
-      padding: 80px 40px; width: 100%;
-    }
-
-    /* Badges */
-    .dispatch-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(249,204,60,0.15);
-      border: 1px solid rgba(249,204,60,0.45);
-      color: var(--amber); font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 6px 14px; border-radius: 100px; margin-bottom: 22px;
-    }
-    .dispatch-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--amber); animation:pulse 1.8s ease-in-out infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
-
-    .auth-panel {
-      display: inline-flex; align-items: center; gap: 16px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: var(--radius-sm);
-      padding: 14px 20px; margin-top: 28px;
-    }
-    .auth-panel-icon {
-      width: 44px; height: 44px;
-      background: var(--amber); border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--charcoal); flex-shrink: 0;
-    }
-    .auth-panel strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--white); }
-    .auth-panel span { font-size: 0.75rem; color: rgba(255,255,255,0.65); }
-
-    /* Model cards */
-    .model-card {
+.model-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       padding: 26px 24px;
       transition: box-shadow var(--transition), border-color var(--transition);
     }
-    .model-card:hover { box-shadow: var(--shadow-md); border-color: var(--green-light); }
-    .model-tag {
-      display: inline-block;
-      font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
-      padding: 3px 10px; border-radius: 100px;
-      background: var(--green-pale); color: var(--green-deep); margin-bottom: 12px;
-    }
-    .model-tag.amber { background: rgba(249,204,60,0.15); color: #8a6d00; }
-    .model-card h3 { font-size: 1rem; font-weight: 800; color: var(--charcoal); margin-bottom: 6px; }
-    .model-card .kw-range { font-size: 0.78rem; color: var(--green-deep); font-weight: 700; margin-bottom: 10px; }
-    .model-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-    .model-parts-list { display: flex; flex-direction: column; gap: 5px; }
-    .model-parts-list li {
-      font-size: 0.78rem; color: var(--slate);
-      display: flex; align-items: center; gap: 7px; list-style: none;
-    }
-    .model-parts-list li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--green-main); flex-shrink:0; }
-
-    /* Parts categories */
-    .parts-cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-    .parts-cat {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); padding: 20px 18px;
-      text-decoration: none; color: inherit;
-      display: flex; flex-direction: column; gap: 10px;
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-      cursor: pointer;
-    }
-    .parts-cat:hover { border-color: var(--green-main); box-shadow: var(--shadow-sm); }
-    .parts-cat-icon {
-      width: 40px; height: 40px;
-      background: var(--green-pale); border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center; color: var(--green-deep);
-    }
-    .parts-cat h4 { font-size: 0.88rem; font-weight: 700; color: var(--charcoal); }
-    .parts-cat p { font-size: 0.76rem; color: var(--muted); line-height: 1.5; }
-
-    /* FAQ */
-    .faq-list { display: flex; flex-direction: column; gap: 4px; max-width: 760px; margin: 0 auto; }
-    .faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); }
-    .faq-question {
-      width: 100%; background: none; border: none; padding: 18px 22px;
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      cursor: pointer; font-family: 'Inter', sans-serif;
-      font-size: 0.9rem; font-weight: 700; color: var(--charcoal); text-align: left;
-      transition: background var(--transition);
-    }
-    .faq-question:hover { background: var(--surface); }
-    .faq-question[aria-expanded="true"] { background: var(--green-pale); color: var(--green-deep); }
-    .faq-icon { width: 22px; height: 22px; flex-shrink: 0; transition: transform var(--transition); }
-    .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
-    .faq-answer { display: none; padding: 0 22px 18px; font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
-    .faq-answer.open { display: block; }
-
-    @media (max-width: 900px) {
-      .hero-parts-inner { padding: 60px 20px; }
-    }
+.model-card:hover { box-shadow: var(--shadow-md); border-color: var(--green-light); }
+.model-card h3 { font-size: var(--fs-16); font-weight: 800; color: var(--charcoal); margin-bottom: 6px; }
+.model-card p { font-size: var(--fs-14); color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.faq-list { display: flex; flex-direction: column; gap: 4px; max-width: 760px; margin: 0 auto; }
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); }
   </style>
 
   <!-- Schema: BreadcrumbList + FAQPage -->
@@ -204,30 +103,16 @@
 </div>
 
 <!-- HERO -->
-<section class="hero-parts">
-  <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=1600&q=80');"></div>
+<section class="hero-parts product-hero">
   <div class="hero-bg"></div>
+  <img class="hero-product" src="assets/img/products/pe1c.webp" width="444" height="779" alt="Froling PE1c pellet boiler" fetchpriority="high" />
   <div class="hero-parts-inner">
-    <div style="max-width:700px;">
-      <div class="dispatch-badge">Authorised UK Distributor — Genuine Parts Only</div>
-      <h1 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px;">Genuine Froling Spare Parts — <em style="font-style:normal;color:var(--amber);">UK Stock, Fast Dispatch</em></h1>
-      <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);line-height:1.75;margin-bottom:28px;max-width:580px;">As Froling's authorised UK distributor since 2012, we hold the most comprehensive UK stock of genuine Froling spare parts. From ignition elements to lambda probes, grate bars to control boards — get your Froling boiler back online fast with parts that protect your warranty.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <!-- SHOP CTA: Replace href with Shopify Froling collection URL when live -->
-        <a href="#parts-categories" class="btn-primary">Browse Parts Categories</a>
-        <a href="tel:03337000275" class="btn-outline">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          Call 0333 700 0275
-        </a>
-      </div>
-      <div class="auth-panel">
-        <div class="auth-panel-icon">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        </div>
-        <div>
-          <strong>Froling Authorised UK Distributor since 2012</strong>
-          <span>All parts are genuine OEM — direct from Froling, Austria</span>
-        </div>
+    <div style="max-width:600px;">
+      <h1 style="font-size:var(--fs-48);font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px;">Genuine Froling Spare Parts — <em style="font-style:normal;color:var(--green-light);">UK Stock, Fast Dispatch</em></h1>
+      <p style="font-size:var(--fs-16);color:rgba(255,255,255,0.82);line-height:1.75;margin-bottom:28px;max-width:580px;">As Froling's authorised UK distributor since 2012, we hold the most comprehensive UK stock of genuine Froling spare parts. From ignition elements to lambda probes, grate bars to control boards — get your Froling boiler back online fast with parts that protect your warranty.</p>
+      <div class="hero-actions">
+        <a href="#enquiry" class="btn-primary">Enquire about a Froling part</a>
+        <a href="spare-parts.html" class="hero-text-link">Or search parts in stock online &rarr;</a>
       </div>
     </div>
   </div>
@@ -270,10 +155,9 @@
 </div>
 
 <!-- FROLING MODELS -->
-<section style="padding:80px 40px;background:var(--surface);">
+<section style="background:var(--surface);">
   <div class="container">
     <div class="section-header">
-      <div class="section-label">Full Model Coverage</div>
       <h2 class="section-title">Froling parts for every<br/>model in the range</h2>
       <p class="section-sub">We stock spare parts for the complete Froling product range — from compact residential pellet boilers to large-scale commercial wood chip systems.</p>
     </div>
@@ -284,7 +168,7 @@
         <h3>PE1, PE1c, PE1e Series</h3>
         <div class="kw-range">7 – 60 kW</div>
         <p>Froling's best-selling fully automatic pellet boiler range for residential and light commercial applications.</p>
-        <ul class="model-parts-list">
+        <details class="model-parts"><summary>Parts we stock (7)</summary><ul class="model-parts-list">
           <li>Ignition elements &amp; coils</li>
           <li>Lambda oxygen sensors</li>
           <li>Combustion fans &amp; motors</li>
@@ -292,7 +176,7 @@
           <li>Grate bars &amp; cleaners</li>
           <li>Control boards &amp; displays</li>
           <li>Door seals &amp; gaskets</li>
-        </ul>
+        </ul></details>
       </div>
 
       <div class="model-card">
@@ -300,7 +184,7 @@
         <h3>P4 &amp; PT4e Series</h3>
         <div class="kw-range">15 – 350 kW</div>
         <p>High-performance pellet systems for larger residential, agricultural, and commercial installations with advanced Lambda control.</p>
-        <ul class="model-parts-list">
+        <details class="model-parts"><summary>Parts we stock (7)</summary><ul class="model-parts-list">
           <li>P4 grate &amp; stoker components</li>
           <li>Lambda probes &amp; sensors</li>
           <li>Secondary air systems</li>
@@ -308,15 +192,15 @@
           <li>Ash removal motors &amp; seals</li>
           <li>Pellet level sensors</li>
           <li>Safety thermostats (STB)</li>
-        </ul>
+        </ul></details>
       </div>
 
       <div class="model-card">
-        <span class="model-tag amber">Wood Chip</span>
+        <span class="model-tag">Wood Chip</span>
         <h3>T4e Range</h3>
         <div class="kw-range">20 – 350 kW</div>
         <p>Award-winning wood chip boiler — one of the most popular biomass systems in the UK. High efficiency, low emissions, robust construction.</p>
-        <ul class="model-parts-list">
+        <details class="model-parts"><summary>Parts we stock (7)</summary><ul class="model-parts-list">
           <li>T4e grate bars &amp; pusher</li>
           <li>Lambda sensors &amp; probes</li>
           <li>Fuel feed screw components</li>
@@ -324,15 +208,15 @@
           <li>Draft fans &amp; fan motors</li>
           <li>Combustion chamber seals</li>
           <li>Temperature sensors (PT100/PT1000)</li>
-        </ul>
+        </ul></details>
       </div>
 
       <div class="model-card">
-        <span class="model-tag amber">Wood Chip</span>
+        <span class="model-tag">Wood Chip</span>
         <h3>Turbomat &amp; Lambdamat</h3>
         <div class="kw-range">100 – 1,500 kW</div>
         <p>Industrial wood chip systems for commercial and district heating, built for continuous operation and minimal downtime.</p>
-        <ul class="model-parts-list">
+        <details class="model-parts"><summary>Parts we stock (7)</summary><ul class="model-parts-list">
           <li>Industrial grate components</li>
           <li>High-temperature door seals</li>
           <li>Lambda control components</li>
@@ -340,7 +224,7 @@
           <li>Ash auger components</li>
           <li>Control system modules</li>
           <li>Flue gas cleaning parts</li>
-        </ul>
+        </ul></details>
       </div>
 
       <div class="model-card">
@@ -348,7 +232,7 @@
         <h3>S1, S3 &amp; S4 Turbo</h3>
         <div class="kw-range">15 – 60 kW</div>
         <p>Froling log wood gasification boilers. High-temperature combustion delivers exceptional efficiency from dry logs.</p>
-        <ul class="model-parts-list">
+        <details class="model-parts"><summary>Parts we stock (7)</summary><ul class="model-parts-list">
           <li>Secondary air nozzle rings</li>
           <li>Combustion chamber linings</li>
           <li>Door seals &amp; viewing glass</li>
@@ -356,7 +240,7 @@
           <li>Temperature limiters (STB)</li>
           <li>Sensor &amp; thermostat kits</li>
           <li>Ceramic combustion bricks</li>
-        </ul>
+        </ul></details>
       </div>
 
       <div class="model-card">
@@ -364,7 +248,7 @@
         <h3>SP Dual &amp; SP Dual Compact</h3>
         <div class="kw-range">15 – 40 kW</div>
         <p>Flexible dual-fuel systems for firewood and wood pellets. Parts cover both combustion systems within the SP Dual housing.</p>
-        <ul class="model-parts-list">
+        <details class="model-parts"><summary>Parts we stock (7)</summary><ul class="model-parts-list">
           <li>Dual-fuel changeover components</li>
           <li>Log combustion chamber parts</li>
           <li>Pellet feed &amp; ignition parts</li>
@@ -372,7 +256,7 @@
           <li>Integrated control modules</li>
           <li>Door seals (log &amp; pellet sides)</li>
           <li>Lambda sensors</li>
-        </ul>
+        </ul></details>
       </div>
 
     </div>
@@ -384,90 +268,89 @@
 </section>
 
 <!-- PARTS CATEGORIES -->
-<section id="parts-categories" style="padding:80px 40px;background:var(--white);">
+<section id="parts-categories" style="background:var(--white);">
   <div class="container">
     <div class="section-header">
-      <div class="section-label">Parts by Category</div>
       <h2 class="section-title">Browse Froling parts<br/>by component type</h2>
       <p class="section-sub">Know the type of part you need? Browse our most common Froling part categories. Not sure? Call us and we'll identify the exact component for you.</p>
     </div>
     <div class="parts-cat-grid">
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <h4>Ignition Components</h4>
         <p>Ignition electrodes, coils, igniter fans, and start-up elements for all Froling models.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         </div>
         <h4>Lambda &amp; O₂ Sensors</h4>
         <p>Lambda probes, oxygen sensors, and flue gas monitoring components for precise combustion.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
         </div>
         <h4>Grates &amp; Stoker Parts</h4>
         <p>Grate bars, stoker fingers, retort components, and ash pusher parts for Froling combustion chambers.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
         <h4>Seals &amp; Gaskets</h4>
         <p>Door seals, combustion chamber gaskets, flue seals, and high-temperature ceramic rope.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <h4>Temperature &amp; Safety Sensors</h4>
         <p>PT100/PT1000 sensors, safety temperature limiters (STB), thermostats, and overheat protection.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
         </div>
         <h4>Control Boards &amp; Electronics</h4>
         <p>Touchtronic and Lambda Touch control boards, display units, fuses, relays, and wiring components.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/><circle cx="12" cy="12" r="4"/></svg>
         </div>
         <h4>Combustion Fans &amp; Motors</h4>
         <p>Primary and secondary air fans, draught fans, and fan motors for all Froling boiler systems.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <h4>Fuel Feed &amp; Conveying</h4>
         <p>Auger/screw conveyor parts, shear pins, hopper components, and fuel metering parts.</p>
-      </div>
+      </a>
 
-      <div class="parts-cat" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+      <a class="parts-cat" href="#enquiry">
         <div class="parts-cat-icon">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3l18 18M10.5 10.677a2 2 0 102.823 2.823"/><path d="M7.362 7.561C5.68 8.74 4.279 10.42 3 12c1.889 2.991 5.282 6 9 6 1.55 0 3.043-.523 4.395-1.35M12 6c3.518 0 6.912 3.009 9 6-.526.83-1.12 1.62-1.77 2.34"/></svg>
         </div>
         <h4>Heat Exchanger Parts</h4>
         <p>Turbulators, cleaning scrapers, baffles, and cleaning system components to maintain peak efficiency.</p>
-      </div>
+      </a>
 
     </div>
     <div style="margin-top:40px;text-align:center;">
-      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">Can't find the part category you need?</p>
+      <p style="color:var(--muted);font-size:var(--fs-14);margin-bottom:16px;">Can't find the part category you need?</p>
       <!-- SHOP CTA: Replace href with Shopify full Froling catalogue URL when live -->
       <a href="#enquiry" class="btn-primary">Enquire About Any Froling Part →</a>
     </div>
@@ -475,45 +358,13 @@
 </section>
 
 <!-- WHY FREEDOM GREEN -->
-<section style="padding:80px 40px;background:var(--green-deep);">
-  <div class="container">
-    <div class="section-header" style="margin-bottom:48px;">
-      <div class="section-label" style="color:var(--amber);">Why Freedom Green</div>
-      <h2 class="section-title" style="color:var(--white);">The UK's most trusted<br/>Froling parts supplier</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,0.65);">More than a parts reseller — we are Froling-certified specialists with real, hands-on experience of every model in the range.</p>
-    </div>
-    <div class="card-grid card-grid-3">
-      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:28px;">
-        <div style="width:44px;height:44px;background:rgba(249,204,60,0.18);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:16px;">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        </div>
-        <h3 style="font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:8px;">Warranty Protection Guaranteed</h3>
-        <p style="font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;">Only genuine Froling parts maintain your boiler's manufacturer warranty. Aftermarket imitations can void your warranty instantly and risk costly system failure.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:28px;">
-        <div style="width:44px;height:44px;background:rgba(249,204,60,0.18);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:16px;">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <h3 style="font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:8px;">UK's Largest Froling Parts Stock</h3>
-        <p style="font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;">As the UK's authorised Froling distributor, we carry the most comprehensive UK stock. Most common parts are available for same-day dispatch — minimising your downtime.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:28px;">
-        <div style="width:44px;height:44px;background:rgba(249,204,60,0.18);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:16px;">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <h3 style="font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:8px;">Froling-Certified Technical Support</h3>
-        <p style="font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;">Our engineers have factory training from Froling in Austria. We can diagnose faults remotely, identify parts from descriptions or photos, and advise on fitting — at no extra charge.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ENQUIRY FORM -->
-<section id="enquiry" style="padding:80px 40px;background:var(--surface);">
+<section id="enquiry" style="background:var(--surface);">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <div class="section-label">Froling Parts Enquiry</div>
         <h2 class="section-title">Order genuine Froling<br/>parts today</h2>
         <p class="section-sub" style="margin-bottom:36px;">Provide your Froling boiler model, the part number or a description of the fault, and we'll confirm availability and pricing — usually within the hour.</p>
         <div class="contact-detail">
@@ -553,19 +404,19 @@
           <div class="form-grid">
             <div class="form-group">
               <label for="first-name">First Name</label>
-              <input type="text" id="first-name" name="first-name" placeholder="John" />
+              <input type="text" id="first-name" name="first-name" autocomplete="given-name" placeholder="John" />
             </div>
             <div class="form-group">
               <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="last-name" placeholder="Smith" />
+              <input type="text" id="last-name" name="last-name" autocomplete="family-name" placeholder="Smith" />
             </div>
             <div class="form-group">
               <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="john@example.com" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="07700 000000" />
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" />
             </div>
             <div class="form-group full">
               <label for="froling-model">Froling Model &amp; Serial Number *</label>
@@ -582,7 +433,7 @@
           </div>
           <!-- SHOP CTA: When Shopify store launches, add a shop online button alongside this form -->
           <button type="submit" class="btn-submit">Send Froling Parts Enquiry →</button>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:12px;text-align:center;">Urgent breakdown? Call us directly on <a href="tel:03337000275" style="color:var(--green-deep);">0333 700 0275</a> for fastest response.</p>
+          <p style="font-size:var(--fs-12);color:var(--muted);margin-top:12px;text-align:center;">Urgent breakdown? Call us directly on <a href="tel:03337000275" style="color:var(--green-deep);">0333 700 0275</a> for fastest response.</p>
         </form>
       </div>
     </div>
@@ -590,63 +441,22 @@
 </section>
 
 <!-- FAQ -->
-<section style="padding:80px 40px;background:var(--white);">
+<section style="background:var(--white);">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">Froling Parts FAQ</div>
       <h2 class="section-title">Frequently asked questions<br/>about Froling spare parts</h2>
     </div>
     <div class="faq-list">
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          What Froling boiler models do you stock spare parts for?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          We stock parts for all current and recent Froling models: PE1, PE1c, PE1e (7–60kW pellet), P4 and PT4e (15–350kW pellet), T4e, Turbomat and Lambdamat (wood chip 20–1,500kW), S1 Turbo, S3 Turbo and S4 Turbo (15–60kW log), SP Dual and SP Dual Compact (15–40kW dual fuel). We also carry parts for older Froling models — call us with your serial number.
-        </div>
-      </div>
+      <details class="faq-item" name="faq" open><summary class="faq-question">What Froling boiler models do you stock spare parts for?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">We stock parts for all current and recent Froling models: PE1, PE1c, PE1e (7–60kW pellet), P4 and PT4e (15–350kW pellet), T4e, Turbomat and Lambdamat (wood chip 20–1,500kW), S1 Turbo, S3 Turbo and S4 Turbo (15–60kW log), SP Dual and SP Dual Compact (15–40kW dual fuel). We also carry parts for older Froling models — call us with your serial number.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Are your Froling parts genuine OEM — not aftermarket copies?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          100% genuine OEM, every time. As Froling's authorised UK distributor since 2012, we source all parts directly from Froling in Austria. We do not sell aftermarket or copy parts under any circumstances. Non-genuine parts can void your warranty, affect safety certification, and cause premature component failure.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">Are your Froling parts genuine OEM — not aftermarket copies?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">100% genuine OEM, every time. As Froling's authorised UK distributor since 2012, we source all parts directly from Froling in Austria. We do not sell aftermarket or copy parts under any circumstances. Non-genuine parts can void your warranty, affect safety certification, and cause premature component failure.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          How do I find my Froling boiler model and serial number?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          Your Froling boiler's ID plate is typically on the front panel or inside the main access door. It shows the full model name (e.g. "Froling PE1 Pellet 25"), the serial number, kW output, and year of manufacture. The original commissioning documentation should also contain this information. If you're unsure, send us a photo of the boiler or ID plate and we'll identify the model for you.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">How do I find my Froling boiler model and serial number?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Your Froling boiler's ID plate is typically on the front panel or inside the main access door. It shows the full model name (e.g. "Froling PE1 Pellet 25"), the serial number, kW output, and year of manufacture. The original commissioning documentation should also contain this information. If you're unsure, send us a photo of the boiler or ID plate and we'll identify the model for you.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          How quickly will my Froling spare parts be delivered?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          In-stock Froling parts ordered before 2pm on a working day are dispatched same day, with next working day delivery available across mainland UK. For non-stocked items, we can typically source directly from Froling in Austria within 3–5 working days. For urgent orders, call us on 0333 700 0275 to confirm availability and fastest delivery options.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">How quickly will my Froling spare parts be delivered?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">In-stock Froling parts ordered before 2pm on a working day are dispatched same day, with next working day delivery available across mainland UK. For non-stocked items, we can typically source directly from Froling in Austria within 3–5 working days. For urgent orders, call us on 0333 700 0275 to confirm availability and fastest delivery options.</div></details>
 
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Can you help diagnose a fault on my Froling boiler?
-          <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer">
-          Yes. Our Froling-certified engineers can help diagnose faults over the phone. Share the error code shown on the boiler display, or describe the symptoms (e.g. shutdown behaviour, unusual noise, error history), and we'll advise on likely causes and the parts required to fix them. We also provide on-site service and commissioning support — contact us for details.
-        </div>
-      </div>
+      <details class="faq-item" name="faq"><summary class="faq-question">Can you help diagnose a fault on my Froling boiler?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Yes. Our Froling-certified engineers can help diagnose faults over the phone. Share the error code shown on the boiler display, or describe the symptoms (e.g. shutdown behaviour, unusual noise, error history), and we'll advise on likely causes and the parts required to fix them. We also provide on-site service and commissioning support — contact us for details.</div></details>
 
     </div>
   </div>
@@ -656,13 +466,12 @@
 <div class="cta-band">
   <div class="cta-inner">
     <div class="cta-text">
-      <div class="cta-label">Also From Freedom Green</div>
       <h2>Looking for a new Froling boiler<br/>or service support?</h2>
       <p>We supply the full Froling range from 7kW to 1,500kW, with full UK installation, commissioning, and ongoing service support.</p>
     </div>
     <div class="cta-actions">
       <a href="pellet-boilers.html" class="btn-white">View Froling Boilers</a>
-      <a href="installer-services.html" class="btn-ghost-white">Installer Services</a>
+      <a href="installers.html" class="btn-ghost-white">Installer Services</a>
     </div>
   </div>
 </div>
@@ -675,13 +484,6 @@
         <img class="logo-img" src="assets/img/logo-white.png" width="224" height="138" alt="Freedom Green Energy &#8212; Renewable Energy Technologies" />
       </div>
       <p>Authorised UK distributors for Froling biomass boilers since 2012. Genuine Froling OEM spare parts for all models, UK stocked and fast dispatched.</p>
-      <div class="footer-newsletter">
-        <p>Stay updated with news, offers and product launches:</p>
-        <div class="newsletter-form">
-          <input type="email" name="newsletter-email" placeholder="Your email address" />
-          <button type="button">Subscribe</button>
-        </div>
-      </div>
     </div>
     <div class="footer-col">
       <h4>Froling Parts</h4>
@@ -707,36 +509,21 @@
       <ul>
         <li><a href="about.html">About Freedom Green</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="installer-services.html">Installer Services</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
+        <li><a href="installers.html">Installer Services</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms of Service</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Freedom Green Energy Ltd. All rights reserved. Froling Authorised UK Distributor.</p>
     <div class="footer-bottom-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Cookies</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy</a>
+      <a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Cookies</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 </footer>
-<script>
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('.faq-question').forEach(b => {
-        b.setAttribute('aria-expanded', 'false');
-        b.nextElementSibling.classList.remove('open');
-      });
-      if (!expanded) {
-        btn.setAttribute('aria-expanded', 'true');
-        btn.nextElementSibling.classList.add('open');
-      }
-    });
-  });
-</script>
 </body>
 </html>

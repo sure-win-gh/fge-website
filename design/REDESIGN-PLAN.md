@@ -197,10 +197,10 @@ Each phase ships on its own and leaves the site better than it found it.
 | Phase | Scope | Done when |
 | --- | --- | --- |
 | **0. Foundations** | `style.css` tokens (colour roles, type, space, radii, motion), `.container`, global reduced-motion, focus ring in `--green-deep`, hover media guard; drawer fix; dropdown on click/focus; menu sheet built from one link array; one-line top bar | No grey band on the right edge of any page; Products opens from the keyboard; Esc closes every layer; no white-on-`#87a946` text. **Done 25 Nov 2026.** The type and space tokens are defined, but moving pages onto them (≤9 sizes) is in Phase 2, because most sizes live in the per-page `<style>` blocks. The top bar kept the phone number, since the header has no phone. |
-| **1. No dead ends** | Real Contact and About; nav "Installers" → `installers.html`; homepage cards and tiles linked; placeholders out of the nav or made into short pages; search works; newsletter works or goes; Privacy, Terms and Cookies pages | A link crawl finds zero `href="#"` and zero nav links to `.under-construction` |
-| **2. Shared components** | Button set, card + row, badge, section head, proof strip, FAQ accordion, enquiry form with autofill hints and success state, part card; per-page `<style>` blocks and inline `style=""` replaced by shared classes | Every page's `<style>` block is gone or page-specific only; no hard-coded brand hexes outside `:root` |
-| **3. Templates** | Home → Parts catalogue (+ brand pages) → Category (wood chip, pellet) → Model (PE1) → Installers header alignment | First screen holds each page's primary action at 390 px; no orphan rows; mobile heights at or under the targets in §3 |
-| **4. Hero art** | Render, review and fix the four concepts; pick one per page; build each hero as HTML over the image | Each hero passes the five-second look: job and one action nameable |
+| **1. No dead ends** | Real Contact and About; nav "Installers" → `installers.html`; homepage cards and tiles linked; placeholders out of the nav or made into short pages; search works; newsletter works or goes; Privacy, Terms and Cookies pages | A link crawl finds zero `href="#"` and zero nav links to `.under-construction`. **Done 25 Nov 2026.**<br>- All 8 enquiry forms posted to `#` or had placeholder EmailJS keys. `assets/forms.js` now sends via EmailJS once `quote.js` has real keys, and until then opens the visitor's email app addressed to info@.<br>- Legal links go to the store's existing policies at `freedomgreen.co.uk/policies/`.<br>- The newsletter form is removed.<br>- `product-brochures.html` is still a placeholder but is linked from nowhere. |
+| **2. Shared components** | Button set, card + row, badge, section head, proof strip, FAQ accordion, enquiry form with autofill hints and success state, part card; per-page `<style>` blocks and inline `style=""` replaced by shared classes | Every page's `<style>` block is gone or page-specific only; no hard-coded brand hexes outside `:root`. **Done 25 Nov 2026.**<br>- 90 rules that pages repeated now live once in `style.css`; 277 copies are gone, and 13 pages have no `<style>` block at all. A computed-style diff of every element on all 22 pages at 390 and 1280 px showed no change from the move.<br>- 112 brand hexes became tokens.<br>- 84 font sizes became 8 tokens (fluid at 36 and 48).<br>- One badge style; quote buttons use the secondary outline.<br>- FAQs are native `<details name="faq">` (three JS copies removed).<br>- Autofill hints on every enquiry form.<br>- Moved to Phase 3, where they're used: the card/row, proof strip and single-action part card. Off-palette status and gradient colours (about 30 hexes) are still in page styles. |
+| **3. Templates** | Home → Parts catalogue (+ brand pages) → Category (wood chip, pellet) → Model (PE1) → Installers header alignment | First screen holds each page's primary action at 390 px; no orphan rows; mobile heights at or under the targets in §3. **Done 25 Nov 2026** (390 px heights, before → after):<br>- Home: 10,288 → 5,471<br>- Parts: 14,297 → 5,960<br>- Wood chip: 17,260 → 7,808<br>- Pellet: 16,979 → 7,947<br>- PE1: 14,585 → 10,107<br>- Froling/Herz parts: ~13.7k → 7.0k / 7.2k (over the 6k parts target; they have no live catalogue to borrow)<br>No orphan rows at 390 or 1280; no sideways scroll on any page at 390, 768, 1024 or 1280.<br>Still to do:<br>- Hero photos on category pages are stock and off-topic (a solar field on Pellet); that's Phase 4.<br>- Installers' own hero form sits below the first screen, but its sticky call bar doesn't. |
+| **4. Hero art** | Render, review and fix the four concepts; pick one per page; build each hero as HTML over the image | Each hero passes the five-second look: job and one action nameable. **Done 25 Nov 2026 without generated art.** No OpenAI key, so the heroes use the real Froling product images instead:<br>- 8 cut-outs made from the store's white-background shots, in `assets/img/products/*.webp`, about 20 KB each.<br>- Each sits on a shared deep-green textured stage with a red ember glow, and replaces every off-topic stock photo (7 heroes plus the home "why" panel).<br>- Spare parts and Herz have the stage without a product: the lambda-sensor cut-out was too low-res, and there's no Herz product image.<br>- The product is hidden below 1024 px so it never sits under the copy; PE1 keeps its photo on phones.<br>The generated-art briefs are still in `design/hero-mockups/concepts.json` for later. |
 | **5. Verify** | The checks in §6, on the built site | All pass, or each failure is logged |
 
 ---
@@ -222,3 +222,43 @@ Each phase ships on its own and leaves the site better than it found it.
 - **Slow network and reduced motion:** only checked by reading the CSS.
 - **Hero renders:** not run, because there's no `OPENAI_API_KEY` in this environment. The 20 prompts are written and dry-run clean.
 - **Leave and return:** not applicable until the forms save progress (the installer form is the candidate).
+
+### Phase 5 verification (25 Nov 2026, on the built site)
+
+**Passed** (all 22 pages unless noted):
+- **Integrity:** no broken images, missing alt text, duplicate IDs, `href="#"` links, dead `#anchors` or JavaScript errors. All 20 internal link targets load, and none is a placeholder. `product.html` gets its `<h1>` once a product loads.
+- **Layout:** no sideways scroll at 390, 768, 1024 or 1280 px, and no orphan grid rows. Phone heights: home 5,508 · parts 5,994 · wood chip 7,832 · pellet 7,983. Every template's primary action is inside the first 844 px.
+- **Contrast:** every text element on a solid background meets WCAG AA (4.5:1, or 3:1 for large text). Text on gradients is checked against both ends.
+- **Tap targets:** every control is at least 24 px, except inline links in running text (an allowed exception). Part-card buttons are 44 px on touch screens.
+- **Keyboard:** Tab order is logical (top bar, nav, search, cart, Order parts, hero, cards) and nothing hidden takes focus. Every control checked shows a 2 px deep-green ring (3 px amber on the hero search). Esc closes the dropdown, search, menu, cart and quote drawer.
+- **Motion:** no `transition: all` and no animated layout properties. Opening then closing the menu or cart mid-slide settles closed and inert. Spinners keep turning under reduced motion; everything else stops.
+- **Flows:**
+  - Header search → `spare-parts.html?q=lambda` → 1 result → Add to Cart → drawer with the item at £137.55 → checkout link to the Shopify cart.
+  - Out-of-stock part → Add to Quote → "✓ In Quote", badge 1, listed in the drawer, saved for the next visit.
+  - Enquiry form: an empty submit is blocked; messy input is trimmed. The success and failure states were tested with EmailJS stubbed.
+
+**Fixed during verification:**
+- **Gradients:** 8 deep→light green gradients behind white text fell to 2.7:1 at the light end. They now end on the `--green-band` token (5.5:1).
+- **Installers form:** the final section's paragraphs were **white on white** (a `.final p` rule leaking into the form). This bug existed before the redesign.
+- **PE1 BUS band:** it was an amber→orange band holding an amber button. Now pale green with charcoal text and a deep-green outline "Call" button.
+- **Installers hero:** the gradient end is darkened so the small amber badge text passes.
+- **Hit areas:** top bar, breadcrumb, footer legal and installers footer links padded to at least 24 px.
+- **FAQ:** the answer height animation is now an opacity fade (no animated layout).
+- **CSS clean-up:** spinners exempt from the reduced-motion freeze; unused `pulse` keyframes removed.
+- **Quote drawer:** it could never send with the placeholder EmailJS keys. It now opens the visitor's email app with the quote filled in, like the other forms.
+
+**Not done / still open:**
+- **EmailJS keys** are still placeholders in `assets/quote.js` and `installers.html`. Until they're set, every form relies on the visitor pressing Send in their email app.
+- **The quote icon** has a screen-reader label but no visible "Quote" text, and it shows even when the quote is empty (§3, cognitive load).
+- **The Froling / Herz parts pages** are ~7k px on phones against the 6k parts target.
+- **The installers hero form** sits below the first screen on phones, but its sticky call bar doesn't.
+- **About 30 off-palette colours** remain (stock-status badges, dark model-header gradients).
+- **The installers success scroll** uses `behavior: 'smooth'` regardless of reduced motion.
+
+**Couldn't run:**
+- The email-app fallback itself, because it would open a mail client.
+- A real Shopify checkout or EmailJS send.
+- Throttled network: no throttling in this browser.
+- Real touch on a tablet.
+- Reduced motion with the OS setting on (checked in CSS only).
+- Leave-and-return: no form saves progress.

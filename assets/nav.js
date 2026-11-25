@@ -13,8 +13,7 @@
         ['Log Boilers', 'log-boilers.html'],
         ['SP Dual Boilers', 'sp-dual-boilers.html'],
         ['Residential Boilers', 'residential-boilers.html'],
-        ['Industrial Boilers', 'industrial-boilers.html'],
-        ['Product Brochures', 'product-brochures.html']
+        ['Industrial Boilers', 'industrial-boilers.html']
       ] },
       { heading: 'Pyrolysis CHP', links: [
         ['About Pyrolysis CHP', 'pyrolysis-chp.html'],
@@ -37,7 +36,7 @@
         ['Other Brands', 'spare-parts-other.html']
       ] }
     ] },
-    { label: 'Installers', href: 'installer-services.html' },
+    { label: 'Installers', href: 'installers.html' },
     { label: 'About', href: 'about.html' },
     { label: 'Contact', href: 'contact.html' }
   ];
@@ -92,7 +91,7 @@
         '</a>' +
         '<ul class="nav-links">' + NAV.map(desktopItem).join('') + '</ul>' +
         '<div class="nav-actions">' +
-          '<button class="icon-btn" aria-label="Search">' +
+          '<button class="icon-btn" id="searchToggle" aria-label="Search spare parts" aria-expanded="false" aria-controls="navSearch">' +
             '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>' +
           '</button>' +
           '<a href="spare-parts.html" class="btn-nav">Order parts</a>' +
@@ -101,6 +100,11 @@
           '</button>' +
         '</div>' +
       '</div>' +
+      // Parts search: a plain GET form, so spare-parts.html?q=… does the searching.
+      '<form class="nav-search" id="navSearch" action="spare-parts.html" role="search" hidden>' +
+        '<input type="search" name="q" placeholder="Search parts by name or number" aria-label="Search spare parts" required />' +
+        '<button type="submit" class="btn-nav">Search</button>' +
+      '</form>' +
     '</nav>' +
 
     '<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">' +
@@ -159,9 +163,20 @@
   toggle.addEventListener('click', function () { setMenu(true); });
   close.addEventListener('click', function () { setMenu(false); });
 
-  // ── Esc closes the top layer: dropdown, mobile menu, cart or quote drawer ──
+  // ── Search toggle ──
+  var searchToggle = document.getElementById('searchToggle');
+  var search = document.getElementById('navSearch');
+  function setSearch(open) {
+    search.hidden = !open;
+    searchToggle.setAttribute('aria-expanded', String(open));
+    (open ? search.elements.q : searchToggle).focus();
+  }
+  searchToggle.addEventListener('click', function () { setSearch(search.hidden); });
+
+  // ── Esc closes the top layer: dropdown, search, mobile menu, cart or quote drawer ──
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
+    if (!search.hidden) { setSearch(false); return; }
     var openLi = document.querySelector('.nav-has-dropdown.open');
     if (openLi) { closeDropdowns(); openLi.querySelector('.nav-trigger').focus(); return; }
     if (menu.classList.contains('open')) { setMenu(false); return; }
@@ -179,5 +194,6 @@
   loadScript('https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js');
   loadScript('assets/cart.js');
   loadScript('assets/quote.js');
+  loadScript('assets/forms.js');
 
 })();

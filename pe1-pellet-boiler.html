@@ -11,28 +11,7 @@
   <link rel="canonical" href="https://freedomgreen.co.uk/pe1-pellet-boiler.html" />
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    /* ===== BREADCRUMB ===== */
-    .breadcrumb-bar {
-      background: #f9fafb;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 10px 0;
-    }
-    .breadcrumb-nav {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 40px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: #6b7280;
-    }
-    .breadcrumb-nav a { color: #3d5a1e; text-decoration: none; }
-    .breadcrumb-nav a:hover { text-decoration: underline; }
-    .breadcrumb-nav [aria-current] { color: #111827; font-weight: 500; }
-
-    /* ===== PAGE HERO ===== */
-    .page-hero {
+.page-hero {
       position: relative;
       min-height: 68vh;
       display: flex;
@@ -40,20 +19,13 @@
       overflow: hidden;
       padding: 80px 0 60px;
     }
-    .page-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
-    .page-hero-overlay {
+.page-hero-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(105deg, rgba(61,90,30,0.96) 0%, rgba(61,90,30,0.82) 55%, rgba(135,169,70,0.68) 100%);
       z-index: 1;
     }
-    .page-hero-inner {
+.page-hero-inner {
       position: relative;
       z-index: 2;
       width: 100%;
@@ -65,72 +37,30 @@
       gap: 56px;
       align-items: center;
     }
-    .page-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(249,204,60,0.18);
-      border: 1px solid rgba(249,204,60,0.4);
-      color: #f9cc3c;
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 0.77rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-    .page-hero h1 {
+.page-hero h1 {
       
-      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-size: var(--fs-48);
       font-weight: 700;
       color: white;
       line-height: 1.12;
       margin: 0 0 8px;
     }
-    .page-hero h1 em { font-style: italic; }
-    .hero-model-label {
-      font-size: 0.82rem;
+.hero-model-label {
+      font-size: var(--fs-14);
       font-weight: 600;
       color: rgba(255,255,255,0.5);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 14px;
     }
-    .page-hero-sub {
-      font-size: 1.05rem;
+.page-hero-sub {
+      font-size: var(--fs-16);
       color: rgba(255,255,255,0.8);
       max-width: 540px;
       margin: 0 0 26px;
       line-height: 1.65;
     }
-    .spec-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 32px;
-    }
-    .spec-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.22);
-      color: white;
-      padding: 6px 13px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-    .spec-pill.amber {
-      background: rgba(249,204,60,0.18);
-      border-color: rgba(249,204,60,0.4);
-      color: #f9cc3c;
-    }
-    .page-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    /* ===== PRODUCT IMAGE CARD (hero right) ===== */
-    .product-img-card {
+.product-img-card {
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -142,7 +72,7 @@
       align-items: center;
       gap: 18px;
     }
-    .product-img-card img {
+.product-img-card img {
       width: 100%;
       max-width: 240px;
       height: 220px;
@@ -150,56 +80,54 @@
       object-position: center bottom;
       filter: drop-shadow(0 12px 28px rgba(0,0,0,0.35));
     }
-    .product-img-stats {
+.product-img-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px 10px;
       width: 100%;
     }
-    .pic-stat {
+.pic-stat {
       text-align: center;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 10px;
       padding: 10px 8px;
     }
-    .pic-stat-num {
-      font-size: 1.4rem;
+.pic-stat-num {
+      font-size: var(--fs-22);
       font-weight: 800;
-      color: #f9cc3c;
+      color: var(--amber);
       line-height: 1;
       margin-bottom: 3px;
     }
-    .pic-stat-num sub { font-size: 0.65rem; font-weight: 600; vertical-align: baseline; }
-    .pic-stat-label {
-      font-size: 0.68rem;
+.pic-stat-num sub { font-size: var(--fs-12); font-weight: 600; vertical-align: baseline; }
+.pic-stat-label {
+      font-size: var(--fs-12);
       color: rgba(255,255,255,0.6);
       line-height: 1.3;
     }
-    .pic-divider { border: none; border-top: 1px solid rgba(255,255,255,0.13); width: 100%; margin: 0; }
-    .pic-phone {
+.pic-divider { border: none; border-top: 1px solid rgba(255,255,255,0.13); width: 100%; margin: 0; }
+.pic-phone {
       display: flex;
       align-items: center;
       gap: 10px;
       width: 100%;
     }
-    .pic-phone-icon {
+.pic-phone-icon {
       width: 34px; height: 34px;
-      background: #f9cc3c;
+      background: var(--amber);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .pic-phone small { display: block; font-size: 0.68rem; color: rgba(255,255,255,0.6); }
-    .pic-phone strong { color: white; font-size: 0.9rem; }
-
-    /* ===== TRUST BAR ===== */
-    .trust-bar {
+.pic-phone small { display: block; font-size: var(--fs-12); color: rgba(255,255,255,0.6); }
+.pic-phone strong { color: white; font-size: var(--fs-14); }
+.trust-bar {
       background: white;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--border);
       padding: 14px 0;
     }
-    .trust-inner {
+.trust-inner {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 40px;
@@ -209,15 +137,15 @@
       flex-wrap: wrap;
       gap: 12px 24px;
     }
-    .trust-item {
+.trust-item {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.82rem;
+      font-size: var(--fs-14);
       font-weight: 600;
-      color: #374151;
+      color: var(--slate);
     }
-    .trust-icon {
+.trust-icon {
       width: 28px; height: 28px;
       background: #f0fdf4;
       border-radius: 50%;
@@ -225,13 +153,11 @@
       color: var(--green-deep);
       flex-shrink: 0;
     }
-
-    /* ===== PRODUCT OVERVIEW ===== */
-    .product-overview {
+.product-overview {
       padding: 80px 40px;
       background: white;
     }
-    .overview-grid {
+.overview-grid {
       max-width: 1280px;
       margin: 0 auto;
       display: grid;
@@ -239,250 +165,218 @@
       gap: 64px;
       align-items: start;
     }
-    .overview-label {
-      font-size: 0.75rem;
+.overview-label {
+      font-size: var(--fs-12);
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--green-deep);
       margin-bottom: 10px;
     }
-    .overview-title {
+.overview-title {
       
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-size: var(--fs-36);
       font-weight: 700;
-      color: #111827;
+      color: var(--charcoal);
       line-height: 1.2;
       margin: 0 0 20px;
     }
-    .overview-body p {
-      font-size: 0.96rem;
+.overview-body p {
+      font-size: var(--fs-16);
       color: #4b5563;
       line-height: 1.7;
       margin: 0 0 16px;
     }
-    .overview-body p:last-child { margin: 0; }
-    .overview-highlights {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+.overview-body p:last-child { margin: 0; }
+.overview-highlights {
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 28px 24px;
     }
-    .overview-highlights h3 {
-      font-size: 0.9rem;
+.overview-highlights h3 {
+      font-size: var(--fs-14);
       font-weight: 700;
-      color: #111827;
+      color: var(--charcoal);
       margin: 0 0 18px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
-    .highlight-row {
+.highlight-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 0;
-      border-bottom: 1px solid #e5e7eb;
-      font-size: 0.87rem;
+      border-bottom: 1px solid var(--border);
+      font-size: var(--fs-14);
     }
-    .highlight-row:last-child { border-bottom: none; }
-    .highlight-row span:first-child { color: #6b7280; }
-    .highlight-row strong { color: #111827; font-weight: 700; }
-    .highlight-row .pill-green {
-      background: #d1fae5;
-      color: #065f46;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 100px;
-    }
-    .overview-cta-pair {
+.highlight-row:last-child { border-bottom: none; }
+.highlight-row span:first-child { color: var(--muted); }
+.highlight-row strong { color: var(--charcoal); font-weight: 700; }
+
+.overview-cta-pair {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       margin-top: 24px;
     }
-
-    /* ===== SPEC TABLE SECTION ===== */
-    .spec-section {
+.spec-section {
       padding: 80px 40px;
-      background: #f9fafb;
+      background: var(--surface);
     }
-    .spec-section .container {
+.spec-section .container {
       max-width: 1280px;
       margin: 0 auto;
     }
-    .spec-table-wrap {
+.spec-table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       margin-top: 40px;
       border-radius: 14px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--border);
       box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     }
-    .spec-table {
+.spec-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.875rem;
+      font-size: var(--fs-14);
       min-width: 780px;
     }
-    .spec-table thead tr {
-      background: linear-gradient(105deg, #3d5a1e 0%, #87a946 100%);
+.spec-table thead tr {
+      background: linear-gradient(105deg, var(--green-deep) 0%, var(--green-band) 100%);
     }
-    .spec-table thead th {
+.spec-table thead th {
       color: white;
       font-weight: 700;
-      font-size: 0.82rem;
+      font-size: var(--fs-14);
       letter-spacing: 0.04em;
       padding: 14px 16px;
       text-align: center;
       white-space: nowrap;
     }
-    .spec-table thead th:first-child {
+.spec-table thead th:first-child {
       text-align: left;
       padding-left: 20px;
     }
-    .spec-table tbody tr {
+.spec-table tbody tr {
       background: white;
       border-bottom: 1px solid #f3f4f6;
       transition: background 0.15s;
     }
-    .spec-table tbody tr:last-child { border-bottom: none; }
-    .spec-table tbody tr:hover { background: #f9fafb; }
-    .spec-table tbody tr.row-highlight { background: #f0fdf4; }
-    .spec-table tbody tr.row-highlight:hover { background: #dcfce7; }
-    .spec-table td {
+.spec-table tbody tr:last-child { border-bottom: none; }
+.spec-table tbody tr:hover { background: var(--surface); }
+.spec-table tbody tr.row-highlight { background: #f0fdf4; }
+.spec-table tbody tr.row-highlight:hover { background: #dcfce7; }
+.spec-table td {
       padding: 12px 16px;
-      color: #374151;
+      color: var(--slate);
       text-align: center;
     }
-    .spec-table td:first-child {
+.spec-table td:first-child {
       text-align: left;
       padding-left: 20px;
       font-weight: 600;
-      color: #111827;
+      color: var(--charcoal);
       white-space: nowrap;
     }
-    .spec-table .aplus-badge {
-      display: inline-block;
-      background: #d1fae5;
-      color: #065f46;
-      font-size: 0.73rem;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 6px;
-    }
-    .spec-table tfoot td {
+.spec-table .aplus-badge { display: inline-block; }
+.spec-table tfoot td {
       padding: 10px 20px;
-      font-size: 0.78rem;
+      font-size: var(--fs-12);
       color: #9ca3af;
-      background: #f9fafb;
-      border-top: 1px solid #e5e7eb;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
     }
-    .spec-note {
+.spec-note {
       margin-top: 18px;
-      font-size: 0.82rem;
-      color: #6b7280;
+      font-size: var(--fs-14);
+      color: var(--muted);
       line-height: 1.6;
     }
-    .spec-note strong { color: #374151; }
-
-    /* ===== TECHNOLOGY SECTION ===== */
-    .tech-section {
+.spec-note strong { color: var(--slate); }
+.tech-section {
       padding: 80px 40px;
       background: white;
     }
-    .tech-section .container {
+.tech-section .container {
       max-width: 1280px;
       margin: 0 auto;
     }
-    .tech-grid {
+.tech-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
       margin-top: 48px;
     }
-    .tech-item {
+.tech-item {
       padding: 24px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--border);
       border-radius: 14px;
-      background: #f9fafb;
+      background: var(--surface);
     }
-    .tech-icon {
+.tech-icon {
       width: 44px; height: 44px;
-      background: #3d5a1e;
+      background: var(--green-deep);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       color: white;
       margin-bottom: 16px;
     }
-    .tech-item h4 {
-      font-size: 0.97rem;
+.tech-item h4 {
+      font-size: var(--fs-16);
       font-weight: 700;
-      color: #111827;
+      color: var(--charcoal);
       margin: 0 0 8px;
     }
-    .tech-item p {
-      font-size: 0.855rem;
-      color: #6b7280;
+.tech-item p {
+      font-size: var(--fs-14);
+      color: var(--muted);
       line-height: 1.65;
       margin: 0;
     }
-
-    /* ===== MODULES SECTION ===== */
-    .modules-section {
+.modules-section {
       padding: 80px 40px;
-      background: #f9fafb;
+      background: var(--surface);
     }
-    .modules-section .container {
+.modules-section .container {
       max-width: 1280px;
       margin: 0 auto;
     }
-    .modules-grid {
+.modules-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 40px;
     }
-    .module-card {
+.module-card {
       background: white;
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 28px 24px;
     }
-    .module-icon {
+.module-icon {
       width: 48px; height: 48px;
-      background: linear-gradient(135deg, #3d5a1e 0%, #87a946 100%);
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-band) 100%);
       border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
       color: white;
       margin-bottom: 18px;
     }
-    .module-card h3 {
-      font-size: 1rem;
+.module-card h3 {
+      font-size: var(--fs-16);
       font-weight: 700;
-      color: #111827;
+      color: var(--charcoal);
       margin: 0 0 10px;
     }
-    .module-card p {
-      font-size: 0.855rem;
-      color: #6b7280;
+.module-card p {
+      font-size: var(--fs-14);
+      color: var(--muted);
       line-height: 1.65;
       margin: 0;
     }
-    .module-tag {
-      display: inline-block;
-      margin-top: 14px;
-      background: #f3f4f6;
-      color: #374151;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 100px;
-    }
-
-    /* ===== BUS GRANT CALLOUT ===== */
-    .bus-callout {
-      background: linear-gradient(140deg, #3d5a1e 0%, #87a946 100%);
+.module-tag { display: inline-block; margin-top: 14px; }
+.bus-callout {
+      background: linear-gradient(140deg, var(--green-deep) 0%, var(--green-band) 100%);
       border-radius: 20px;
       padding: 40px 48px;
       display: flex;
@@ -490,169 +384,123 @@
       gap: 32px;
       margin: 56px 0 0;
     }
-    .bus-icon {
+.bus-icon {
       width: 68px; height: 68px;
       background: rgba(249,204,60,0.2);
       border: 2px solid rgba(249,204,60,0.35);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
-      color: #f9cc3c;
+      color: var(--amber);
     }
-    .bus-callout-text { flex: 1; }
-    .bus-amount {
+.bus-callout-text { flex: 1; }
+.bus-amount {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: var(--fs-12);
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #f9cc3c;
+      color: var(--amber);
       margin-bottom: 6px;
     }
-    .bus-callout-text h4 {
+.bus-callout-text h4 {
       
-      font-size: 1.4rem;
+      font-size: var(--fs-22);
       font-weight: 700;
       color: white;
       margin: 0 0 8px;
     }
-    .bus-callout-text p {
-      font-size: 0.9rem;
+.bus-callout-text p {
+      font-size: var(--fs-14);
       color: rgba(255,255,255,0.75);
       line-height: 1.6;
       margin: 0;
     }
-    .bus-cta {
+.bus-cta {
       flex-shrink: 0;
     }
-
-    /* ===== SECTION SHARED ===== */
-    .section-header.centered { text-align: center; max-width: 720px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.75rem;
+.section-header.centered { text-align: center; max-width: 720px; margin: 0 auto; }
+.section-label {
+      font-size: var(--fs-12);
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--green-deep);
       margin-bottom: 10px;
     }
-    .section-title {
+.section-title {
       
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-size: var(--fs-36);
       font-weight: 700;
-      color: #111827;
+      color: var(--charcoal);
       line-height: 1.2;
       margin: 0 0 14px;
     }
-    .section-sub {
-      font-size: 1rem;
-      color: #6b7280;
+.section-sub {
+      font-size: var(--fs-16);
+      color: var(--muted);
       line-height: 1.7;
       margin: 0;
     }
-
-    /* ===== INLINE CTA BAND ===== */
-    .inline-cta {
-      background: linear-gradient(105deg, #f9cc3c 0%, #e8941a 100%);
+.inline-cta {
+      background: var(--green-pale);   /* amber is for the action (the button), not the band */
       padding: 40px;
       text-align: center;
     }
-    .inline-cta h3 {
+.inline-cta h3 {
       
-      font-size: 1.6rem;
+      font-size: var(--fs-28);
       font-weight: 700;
-      color: #3d5a1e;
+      color: var(--green-deep);
       margin: 0 0 8px;
     }
-    .inline-cta p {
-      color: rgba(61,90,30,0.8);
-      font-size: 1rem;
+.inline-cta p {
+      color: var(--slate);
+      font-size: var(--fs-16);
       margin: 0 0 22px;
     }
-    .inline-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-    /* ===== FAQ + WHY ===== */
-    .faq-why-section { padding: 80px 40px; background: #f9fafb; }
-    .faq-why-section .container { max-width: 1280px; margin: 0 auto; }
-    .faq-why-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .faq-list { margin-top: 32px; }
-    .faq-item {
-      border-bottom: 1px solid #e5e7eb;
+.inline-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.faq-why-section .container { max-width: 1280px; margin: 0 auto; }
+.faq-list { margin-top: 32px; }
+.faq-item {
+      border-bottom: 1px solid var(--border);
       padding: 20px 0;
     }
-    .faq-item:first-child { border-top: 1px solid #e5e7eb; }
-    .faq-q {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #111827;
-      margin: 0 0 8px;
-    }
-    .faq-a {
-      font-size: 0.855rem;
-      color: #6b7280;
-      line-height: 1.7;
-      margin: 0;
-    }
-    .why-reasons { margin-top: 32px; display: flex; flex-direction: column; gap: 20px; }
-    .why-reason { display: flex; gap: 16px; align-items: flex-start; }
-    .why-num {
-      width: 34px; height: 34px;
-      background: var(--green-deep);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: white;
-      font-size: 0.82rem;
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.why-reason h4 {
+      font-size: var(--fs-14);
       font-weight: 700;
-      flex-shrink: 0;
-    }
-    .why-reason h4 {
-      font-size: 0.93rem;
-      font-weight: 700;
-      color: #111827;
+      color: var(--charcoal);
       margin: 0 0 4px;
     }
-    .why-reason p {
-      font-size: 0.84rem;
-      color: #6b7280;
+.why-reason p {
+      font-size: var(--fs-14);
+      color: var(--muted);
       margin: 0;
       line-height: 1.55;
     }
-    .why-cta-box {
-      background: linear-gradient(140deg, #3d5a1e 0%, #87a946 100%);
-      border-radius: 16px;
-      padding: 26px 24px;
-      margin-top: 28px;
-      text-align: center;
-    }
-    .why-cta-box p {
+.why-cta-box p {
       color: rgba(255,255,255,0.78);
-      font-size: 0.88rem;
+      font-size: var(--fs-14);
       margin: 0 0 16px;
       line-height: 1.5;
     }
-
-    /* ===== CONTACT ===== */
-    .contact { padding: 80px 40px; background: white; }
-    .contact .container { max-width: 1280px; margin: 0 auto; }
-    .contact-grid {
+.contact { padding: 80px 40px; background: white; }
+.contact .container { max-width: 1280px; margin: 0 auto; }
+.contact-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 56px;
       align-items: start;
       margin-top: 40px;
     }
-    .contact-detail {
+.contact-detail {
       display: flex;
       align-items: flex-start;
       gap: 16px;
       margin-bottom: 24px;
     }
-    .contact-icon {
+.contact-icon {
       width: 40px; height: 40px;
       background: #f0fdf4;
       border-radius: 10px;
@@ -660,89 +508,87 @@
       color: var(--green-deep);
       flex-shrink: 0;
     }
-    .contact-detail h4 {
-      font-size: 0.88rem;
+.contact-detail h4 {
+      font-size: var(--fs-14);
       font-weight: 700;
-      color: #111827;
+      color: var(--charcoal);
       margin: 0 0 3px;
     }
-    .contact-detail p { font-size: 0.88rem; color: #6b7280; margin: 0; }
-    .form-card {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+.contact-detail p { font-size: var(--fs-14); color: var(--muted); margin: 0; }
+.form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 18px;
       padding: 32px;
     }
-    .form-grid {
+.form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
-    .form-group { display: flex; flex-direction: column; gap: 5px; }
-    .form-group.full { grid-column: 1 / -1; }
-    .form-group label {
-      font-size: 0.82rem;
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+      font-size: var(--fs-14);
       font-weight: 600;
-      color: #374151;
+      color: var(--slate);
     }
-    .form-group input,
+.form-group input,
     .form-group select,
     .form-group textarea {
       padding: 10px 13px;
       border: 1px solid #d1d5db;
       border-radius: 8px;
-      font-size: 0.9rem;
-      color: #111827;
+      font-size: var(--fs-14);
+      color: var(--charcoal);
       background: white;
       font-family: inherit;
       transition: border-color 0.15s;
       outline: none;
     }
-    .form-group input:focus,
+.form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color: #87a946; }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .btn-submit {
+    .form-group textarea:focus { border-color: var(--green-main); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.btn-submit {
       width: 100%;
       margin-top: 18px;
-      background: #3d5a1e;
+      background: var(--green-deep);
       color: white;
       border: none;
       padding: 14px 24px;
       border-radius: 10px;
-      font-size: 0.95rem;
+      font-size: var(--fs-16);
       font-weight: 700;
       cursor: pointer;
       font-family: inherit;
       transition: background 0.2s;
     }
-    .btn-submit:hover { background: var(--green-deep-hover); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1000px) {
-      .page-hero-inner { grid-template-columns: 1fr; }
-      .product-img-card { display: none; }
-      .overview-grid { grid-template-columns: 1fr; gap: 36px; }
-      .tech-grid { grid-template-columns: 1fr 1fr; }
-      .modules-grid { grid-template-columns: 1fr 1fr; }
-      .faq-why-grid { grid-template-columns: 1fr; gap: 40px; }
-      .bus-callout { flex-direction: column; text-align: center; padding: 32px 24px; }
-    }
-    @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .form-group.full { grid-column: 1; }
-    }
-    @media (max-width: 600px) {
-      .page-hero { padding: 60px 0 48px; }
-      .page-hero-inner { padding: 0 20px; }
-      .product-overview, .spec-section, .tech-section, .modules-section, .faq-why-section, .contact { padding: 60px 20px; }
-      .breadcrumb-nav { padding: 0 20px; }
-      .tech-grid { grid-template-columns: 1fr; }
-      .modules-grid { grid-template-columns: 1fr; }
-      .bus-callout { padding: 28px 20px; }
-      .bus-icon { display: none; }
-    }
+.btn-submit:hover { background: var(--green-deep-hover); }
+@media (max-width: 1000px) {
+  .page-hero-inner { grid-template-columns: 1fr; }
+  .product-img-card { display: none; }
+  .overview-grid { grid-template-columns: 1fr; gap: 36px; }
+  .tech-grid { grid-template-columns: 1fr 1fr; }
+  .modules-grid { grid-template-columns: 1fr 1fr; }
+  .faq-why-grid { grid-template-columns: 1fr; gap: 40px; }
+  .bus-callout { flex-direction: column; text-align: center; padding: 32px 24px; }
+}
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-group.full { grid-column: 1; }
+}
+@media (max-width: 600px) {
+  .page-hero { padding: 60px 0 48px; }
+  .page-hero-inner { padding: 0 20px; }
+  .product-overview, .spec-section, .tech-section, .modules-section, .faq-why-section, .contact { padding: 60px 20px; }
+  .breadcrumb-nav { padding: 0 20px; }
+  .tech-grid { grid-template-columns: 1fr; }
+  .modules-grid { grid-template-columns: 1fr; }
+  .bus-callout { padding: 28px 20px; }
+  .bus-icon { display: none; }
+}
   </style>
 
   <!-- BreadcrumbList Schema -->
@@ -859,16 +705,10 @@
 </div>
 
 <!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80');"></div>
+<section class="page-hero product-hero">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-inner">
     <div>
-      <div class="hero-model-label">Froling Pellet Boilers</div>
-      <div class="page-hero-badge">
-        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        A++ Energy Rated · BUS Grant Eligible
-      </div>
       <h1>Froling<br/><em>PE1 Pellet</em><br/>Boiler</h1>
       <p class="page-hero-sub">The most compact, intelligent automatic pellet boiler in its class. The PE1 fits in just 0.38m² of floor space yet delivers everything you need for efficient, low-carbon home heating — from 7kW to 35kW, all A++ rated, and fully controllable via the Froling app.</p>
       <div class="spec-pills">
@@ -884,26 +724,15 @@
           <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
           7" Touchscreen
         </span>
-        <span class="spec-pill">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-          0.38m² Footprint
-        </span>
-        <span class="spec-pill amber">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
-          £5,000 BUS Grant
-        </span>
       </div>
       <div class="page-hero-ctas">
         <a href="#contact" class="btn-primary">Get a Free PE1 Quote</a>
-        <a href="tel:03337000275" class="btn-outline">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          Call 0333 700 0275
-        </a>
+        <a href="tel:03337000275" class="hero-text-link">Or call 0333 700 0275</a>
       </div>
     </div>
 
     <div class="product-img-card">
-      <img src="https://cdn.shopify.com/s/files/1/0777/6098/7329/files/PE1.png?v=1728490768" alt="Froling PE1 Wood Pellet Boiler" />
+      <img src="assets/img/products/pe1.webp" width="528" height="772" alt="Froling PE1 Wood Pellet Boiler" />
       <div class="product-img-stats">
         <div class="pic-stat">
           <div class="pic-stat-num">7<sub>kW</sub></div>
@@ -984,7 +813,7 @@
       <p>The PE1 is eligible for the UK Government's Boiler Upgrade Scheme, providing a £5,000 grant for eligible homeowners in England and Wales when installed by an MCS-certified installer. Freedom Green Energy manage the grant application from start to finish.</p>
       <div class="overview-cta-pair">
         <a href="#contact" class="btn-primary">Get a Free Quote</a>
-        <a href="#specifications" class="btn-outline" style="color:#3d5a1e;border-color:#3d5a1e;">View Specifications</a>
+        <a href="#specifications" class="btn-outline" style="color:var(--green-deep);border-color:var(--green-deep);">View Specifications</a>
       </div>
     </div>
     <div>
@@ -1028,7 +857,7 @@
         </div>
         <div class="highlight-row">
           <span>Back-Up to Pellet Range</span>
-          <a href="pellet-boilers.html" style="color:var(--green-deep);font-weight:600;font-size:0.87rem;text-decoration:none;">View All Pellet Boilers →</a>
+          <a href="pellet-boilers.html" style="color:var(--green-deep);font-weight:600;font-size:var(--fs-14);text-decoration:none;">View All Pellet Boilers →</a>
         </div>
       </div>
     </div>
@@ -1039,7 +868,6 @@
 <section class="spec-section" id="specifications">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">Technical Data</div>
       <h2 class="section-title">PE1 technical<br/>specifications</h2>
       <p class="section-sub">All seven PE1 models share the same core technology and A++ energy rating. Choose the output that matches your heat demand — our team provides free heat loss assessments to specify the correct size.</p>
     </div>
@@ -1171,7 +999,7 @@
           </tr>
           <tr>
             <td>Power Supply</td>
-            <td colspan="7" style="text-align:center;color:#6b7280;">230V / 50Hz / C16A (all models)</td>
+            <td colspan="7" style="text-align:center;color:var(--muted);">230V / 50Hz / C16A (all models)</td>
           </tr>
           <tr>
             <td>Optional DHW Tank</td>
@@ -1202,7 +1030,7 @@
   <p>The PE1 qualifies for the Boiler Upgrade Scheme. Our MCS-certified team handles the entire application.</p>
   <div class="inline-cta-btns">
     <a href="#contact" class="btn-primary">Check My Eligibility</a>
-    <a href="tel:03337000275" class="btn-outline">
+    <a href="tel:03337000275" class="btn-secondary">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .73h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
       Call 0333 700 0275
     </a>
@@ -1213,7 +1041,6 @@
 <section class="tech-section" id="technology">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">PE1 Technology</div>
       <h2 class="section-title">Intelligent by design —<br/>effortless to live with</h2>
       <p class="section-sub">Every aspect of the PE1 is engineered to maximise combustion efficiency, minimise emissions, and reduce the time you spend managing your heating to virtually zero.</p>
     </div>
@@ -1275,7 +1102,6 @@
 <section class="modules-section" id="modules">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">System Options</div>
       <h2 class="section-title">Optional modules for a<br/>complete boiler room</h2>
       <p class="section-sub">The PE1 can be expanded with factory-integrated optional modules, turning the boiler into a complete, all-in-one heating centre — reducing installation time and keeping the plant room tidy.</p>
     </div>
@@ -1332,86 +1158,25 @@
 
       <!-- FAQ -->
       <div>
-        <div class="section-label">Common Questions</div>
-        <h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.2rem);">Froling PE1<br/>FAQs</h2>
+        <h2 class="section-title" style="font-size: var(--fs-36);">Froling PE1<br/>FAQs</h2>
         <div class="faq-list">
 
-          <div class="faq-item">
-            <p class="faq-q">What is the Froling PE1 pellet boiler?</p>
-            <p class="faq-a">The Froling PE1 is a fully automatic residential wood pellet boiler available in seven output sizes from 7kW to 35kW. It is A++ energy rated, features a 7-inch colour touchscreen, and occupies just 0.38m² of floor space — making it one of the most compact biomass boilers available. It is BUS grant eligible and connects directly to your existing heating system.</p>
-          </div>
+          <details class="faq-item" name="faq" open><summary class="faq-question">What is the Froling PE1 pellet boiler?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">The Froling PE1 is a fully automatic residential wood pellet boiler available in seven output sizes from 7kW to 35kW. It is A++ energy rated, features a 7-inch colour touchscreen, and occupies just 0.38m² of floor space — making it one of the most compact biomass boilers available. It is BUS grant eligible and connects directly to your existing heating system.</div></details>
 
-          <div class="faq-item">
-            <p class="faq-q">What size PE1 do I need for my home?</p>
-            <p class="faq-a">For most modern, well-insulated homes a PE1 10kW or 15kW is sufficient. Older or larger properties typically need a PE1 20kW or 25kW. The PE1 modulates down to part-load automatically, so modest oversizing is not harmful. Our technical team provides free heat loss assessments to confirm the correct model — call 0333 700 0275 or enquire online.</p>
-          </div>
+          <details class="faq-item" name="faq"><summary class="faq-question">What size PE1 do I need for my home?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">For most modern, well-insulated homes a PE1 10kW or 15kW is sufficient. Older or larger properties typically need a PE1 20kW or 25kW. The PE1 modulates down to part-load automatically, so modest oversizing is not harmful. Our technical team provides free heat loss assessments to confirm the correct model — call 0333 700 0275 or enquire online.</div></details>
 
-          <div class="faq-item">
-            <p class="faq-q">Is the PE1 eligible for the £5,000 BUS grant?</p>
-            <p class="faq-a">Yes. The Froling PE1 qualifies for the Boiler Upgrade Scheme (BUS) when installed by an MCS-certified installer in England or Wales — providing a £5,000 grant applied at the point of purchase. Freedom Green Energy are MCS certified and manage the full grant application process for you at no additional cost.</p>
-          </div>
+          <details class="faq-item" name="faq"><summary class="faq-question">Is the PE1 eligible for the £5,000 BUS grant?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Yes. The Froling PE1 qualifies for the Boiler Upgrade Scheme (BUS) when installed by an MCS-certified installer in England or Wales — providing a £5,000 grant applied at the point of purchase. Freedom Green Energy are MCS certified and manage the full grant application process for you at no additional cost.</div></details>
 
-          <div class="faq-item">
-            <p class="faq-q">Can the PE1 replace my existing oil or gas boiler?</p>
-            <p class="faq-a">Yes. The Froling PE1 connects directly to your existing central heating pipework and is compatible with radiators, underfloor heating systems, and standard hot water cylinders. The main addition to your property is a pellet store — typically a hopper, bagged store or bulk silo depending on your available space. Our team designs the complete system.</p>
-          </div>
+          <details class="faq-item" name="faq"><summary class="faq-question">Can the PE1 replace my existing oil or gas boiler?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Yes. The Froling PE1 connects directly to your existing central heating pipework and is compatible with radiators, underfloor heating systems, and standard hot water cylinders. The main addition to your property is a pellet store — typically a hopper, bagged store or bulk silo depending on your available space. Our team designs the complete system.</div></details>
 
-          <div class="faq-item">
-            <p class="faq-q">How is the PE1 fuelled and how much storage do I need?</p>
-            <p class="faq-a">Wood pellets are fed automatically from the integrated on-board hopper or from an external bulk store via a vacuum suction system. For most homes, a bulk pellet store of 1,000–3,000kg refilled once or twice per year is typical. Freedom Green will assess your property and design a fuel storage solution that suits your space and usage pattern.</p>
-          </div>
+          <details class="faq-item" name="faq"><summary class="faq-question">How is the PE1 fuelled and how much storage do I need?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">Wood pellets are fed automatically from the integrated on-board hopper or from an external bulk store via a vacuum suction system. For most homes, a bulk pellet store of 1,000–3,000kg refilled once or twice per year is typical. Freedom Green will assess your property and design a fuel storage solution that suits your space and usage pattern.</div></details>
 
-          <div class="faq-item">
-            <p class="faq-q">How often does the PE1 need maintenance?</p>
-            <p class="faq-a">An annual service by a HETAS-registered Froling engineer is recommended. The Lambdatronic 3200 logs all operational data and sends automatic service reminders. The ash drawer requires emptying every few weeks (about 10 minutes of work). Freedom Green can connect you with trained Froling service engineers throughout the UK.</p>
-          </div>
+          <details class="faq-item" name="faq"><summary class="faq-question">How often does the PE1 need maintenance?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary><div class="faq-answer">An annual service by a HETAS-registered Froling engineer is recommended. The Lambdatronic 3200 logs all operational data and sends automatic service reminders. The ash drawer requires emptying every few weeks (about 10 minutes of work). Freedom Green can connect you with trained Froling service engineers throughout the UK.</div></details>
 
         </div>
       </div>
 
       <!-- Why Freedom Green -->
-      <div>
-        <div class="section-label">Why Choose Us</div>
-        <h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.2rem);">Why Freedom<br/>Green Energy?</h2>
-        <div class="why-reasons">
-          <div class="why-reason">
-            <div class="why-num">1</div>
-            <div>
-              <h4>Froling Authorised UK Distributor since 2012</h4>
-              <p>Our direct distributor relationship with Fröling gives you access to genuine parts, full manufacturer warranty support, and engineers trained directly by Fröling's technical team — something no general heating merchant can offer.</p>
-            </div>
-          </div>
-          <div class="why-reason">
-            <div class="why-num">2</div>
-            <div>
-              <h4>We Handle Your BUS Grant</h4>
-              <p>Our MCS-certified team manages the entire Boiler Upgrade Scheme application from eligibility check to grant submission — so you receive your £5,000 without the paperwork headache.</p>
-            </div>
-          </div>
-          <div class="why-reason">
-            <div class="why-num">3</div>
-            <div>
-              <h4>Free System Sizing &amp; Heat Loss Assessment</h4>
-              <p>We don't just supply boilers — we design complete heating systems. Our technical team carries out a full heat loss survey and specifies the optimal PE1 size, buffer vessel, fuel store and controls for your property.</p>
-            </div>
-          </div>
-          <div class="why-reason">
-            <div class="why-num">4</div>
-            <div>
-              <h4>Nationwide Parts, Delivery &amp; Service</h4>
-              <p>We hold stock in our UK warehouse and maintain a network of trained Froling service engineers across the country — keeping your PE1 running efficiently for the long term.</p>
-            </div>
-          </div>
-        </div>
-        <div class="why-cta-box">
-          <p>Ready to explore the PE1 for your home? Our specialists are available Monday to Friday, 8:30am – 5:00pm.</p>
-          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-            <a href="#contact" class="btn-primary">Get a Free Quote</a>
-            <a href="tel:03337000275" class="btn-outline" style="border-color:rgba(255,255,255,0.35);color:white;">Call Us Now</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1420,7 +1185,6 @@
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">Get In Touch</div>
       <h2 class="section-title">Get your free PE1 quote today</h2>
     </div>
     <div class="contact-grid">
@@ -1460,19 +1224,19 @@
           <div class="form-grid">
             <div class="form-group">
               <label for="first-name">First Name</label>
-              <input type="text" id="first-name" name="first-name" placeholder="John" />
+              <input type="text" id="first-name" name="first-name" autocomplete="given-name" placeholder="John" />
             </div>
             <div class="form-group">
               <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="last-name" placeholder="Smith" />
+              <input type="text" id="last-name" name="last-name" autocomplete="family-name" placeholder="Smith" />
             </div>
             <div class="form-group">
               <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="john@example.com" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="07700 000000" />
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" />
             </div>
             <div class="form-group full">
               <label for="pe1-size">PE1 Size of Interest</label>
@@ -1519,13 +1283,6 @@
         <img class="logo-img" src="assets/img/logo-white.png" width="224" height="138" alt="Freedom Green Energy &#8212; Renewable Energy Technologies" />
       </div>
       <p>Authorised UK distributors for Froling biomass boilers since 2012. Specialists in renewable heating, solar, and sustainable energy technologies across the UK.</p>
-      <div class="footer-newsletter">
-        <p>Stay updated with news, offers and product launches:</p>
-        <div class="newsletter-form">
-          <input type="email" name="newsletter-email" placeholder="Your email address" />
-          <button type="button">Subscribe</button>
-        </div>
-      </div>
     </div>
     <div class="footer-col">
       <h4>Pellet Boilers</h4>
@@ -1548,7 +1305,7 @@
         <li><a href="smart-solar.html">Smart Solar PV</a></li>
         <li><a href="heat-pumps.html">Hot Water Heat Pumps</a></li>
         <li><a href="spare-parts-froling.html">Spare Parts</a></li>
-        <li><a href="installer-services.html">Installer Services</a></li>
+        <li><a href="installers.html">Installer Services</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1556,21 +1313,46 @@
       <ul>
         <li><a href="about.html">About Freedom Green</a></li>
         <li><a href="#contact">Contact Us</a></li>
-        <li><a href="installer-services.html">Installer Services</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
+        <li><a href="installers.html">Installer Services</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms of Service</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Freedom Green Energy Ltd. All rights reserved. Froling Authorised UK Distributor.</p>
     <div class="footer-bottom-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Cookies</a>
-      <a href="#contact">Contact</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy</a>
+      <a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Cookies</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </footer>
+<script>
+  // Spec table: on phones, one PE1 size at a time (buttons built from the table's own header row).
+  (function () {
+    var table = document.querySelector('.spec-table');
+    if (!table) return;
+    var heads = Array.prototype.slice.call(table.tHead.rows[0].cells, 1);
+    var bar = document.createElement('div');
+    bar.className = 'spec-switch';
+    bar.setAttribute('role', 'group');
+    bar.setAttribute('aria-label', 'Show specifications for');
+    heads.forEach(function (th, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = th.textContent.replace('PE1 ', '') + ' kW';
+      b.addEventListener('click', function () { show(i); });
+      bar.appendChild(b);
+    });
+    table.parentNode.parentNode.insertBefore(bar, table.parentNode);
+    function show(i) {
+      table.dataset.col = i + 2;   // nth-child of the model column
+      Array.prototype.forEach.call(bar.children, function (b, j) { b.setAttribute('aria-pressed', String(j === i)); });
+    }
+    show(0);
+  })();
+</script>
 </body>
 </html>

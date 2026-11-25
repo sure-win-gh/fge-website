@@ -7,19 +7,17 @@
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    /* ── PRODUCT DETAIL PAGE ── */
-    .pdp-breadcrumb {
+.pdp-breadcrumb {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       padding: 12px 40px;
-      font-size: 0.78rem;
+      font-size: var(--fs-12);
       color: var(--muted);
     }
-    .pdp-breadcrumb a { color: var(--muted); text-decoration: none; }
-    .pdp-breadcrumb a:hover { color: var(--green-deep); }
-    .pdp-breadcrumb span { margin: 0 6px; }
-
-    .pdp-wrap {
+.pdp-breadcrumb a { color: var(--muted); text-decoration: none; }
+.pdp-breadcrumb a:hover { color: var(--green-deep); }
+.pdp-breadcrumb span { margin: 0 6px; }
+.pdp-wrap {
       max-width: 1200px;
       margin: 0 auto;
       padding: 56px 40px 80px;
@@ -28,10 +26,8 @@
       gap: 60px;
       align-items: start;
     }
-
-    /* ── Gallery ── */
-    .pdp-gallery { position: sticky; top: 90px; }
-    .pdp-main-img-wrap {
+.pdp-gallery { position: sticky; top: 90px; }
+.pdp-main-img-wrap {
       aspect-ratio: 1;
       background: var(--surface);
       border-radius: var(--radius-md);
@@ -42,15 +38,15 @@
       justify-content: center;
       margin-bottom: 12px;
     }
-    .pdp-main-img-wrap img {
+.pdp-main-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       padding: 24px;
       transition: transform 0.4s ease;
     }
-    .pdp-main-img-wrap:hover img { transform: scale(1.04); }
-    .pdp-img-placeholder {
+.pdp-main-img-wrap:hover img { transform: scale(1.04); }
+.pdp-img-placeholder {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,12 +54,12 @@
       width: 100%;
       height: 100%;
     }
-    .pdp-thumbs {
+.pdp-thumbs {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
-    .pdp-thumb {
+.pdp-thumb {
       width: 64px;
       height: 64px;
       border-radius: var(--radius-sm);
@@ -78,56 +74,52 @@
       padding: 0;
       flex-shrink: 0;
     }
-    .pdp-thumb:hover,
+.pdp-thumb:hover,
     .pdp-thumb.active { border-color: var(--green-main); }
-    .pdp-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
-
-    /* ── Details panel ── */
-    .pdp-details {}
-    .pdp-vendor {
-      font-size: 0.72rem;
+.pdp-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.pdp-details {}
+.pdp-vendor {
+      font-size: var(--fs-12);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--green-deep);
       margin-bottom: 10px;
     }
-    .pdp-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
+.pdp-title {
+      font-size: var(--fs-28);
       font-weight: 900;
       color: var(--charcoal);
       line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 16px;
     }
-    .pdp-stock-price {
+.pdp-stock-price {
       display: flex;
       align-items: center;
       gap: 14px;
       margin-bottom: 24px;
       flex-wrap: wrap;
     }
-    .pdp-price {
-      font-size: 1.7rem;
+.pdp-price {
+      font-size: var(--fs-28);
       font-weight: 900;
       color: var(--green-deep);
       line-height: 1;
     }
-    .pdp-price-por {
-      font-size: 0.95rem;
+.pdp-price-por {
+      font-size: var(--fs-16);
       font-weight: 600;
       color: var(--muted);
     }
-    .pdp-divider {
+.pdp-divider {
       border: none;
       border-top: 1px solid var(--border);
       margin: 24px 0;
     }
-
-    /* Options */
-    .pdp-option { margin-bottom: 20px; }
-    .pdp-option-label {
-      font-size: 0.8rem;
+.pdp-option { margin-bottom: 20px; }
+.pdp-option-label {
+      font-size: var(--fs-12);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -137,48 +129,46 @@
       gap: 8px;
       align-items: center;
     }
-    .pdp-option-selected {
+.pdp-option-selected {
       font-weight: 600;
       color: var(--green-deep);
       text-transform: none;
       letter-spacing: 0;
     }
-    .pdp-option-pills {
+.pdp-option-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-    .pdp-pill {
+.pdp-pill {
       padding: 8px 16px;
       border: 2px solid var(--border);
       border-radius: var(--radius-sm);
       background: var(--white);
       font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
+      font-size: var(--fs-14);
       font-weight: 600;
       color: var(--charcoal);
       cursor: pointer;
       transition: border-color var(--transition), background var(--transition), color var(--transition);
     }
-    .pdp-pill:hover { border-color: var(--green-main); }
-    .pdp-pill.active {
+.pdp-pill:hover { border-color: var(--green-main); }
+.pdp-pill.active {
       border-color: var(--green-main);
       background: var(--green-pale);
       color: var(--green-deep);
     }
-    .pdp-pill.unavailable {
+.pdp-pill.unavailable {
       opacity: 0.4;
       cursor: not-allowed;
       text-decoration: line-through;
     }
-
-    /* Action buttons */
-    .pdp-actions {
+.pdp-actions {
       display: flex;
       gap: 10px;
       margin-bottom: 20px;
     }
-    .pdp-btn-cart {
+.pdp-btn-cart {
       flex: 1;
       padding: 15px 20px;
       background: var(--green-deep);
@@ -186,36 +176,33 @@
       border: none;
       border-radius: var(--radius-sm);
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-size: var(--fs-16);
       font-weight: 700;
       cursor: pointer;
       transition: background var(--transition), transform var(--transition);
     }
-    .pdp-btn-cart:hover:not(:disabled) { background: var(--green-deep-hover); }
-    .pdp-btn-cart:disabled { opacity: 0.7; cursor: not-allowed; }
-
-    .pdp-btn-quote {
+.pdp-btn-cart:hover:not(:disabled) { background: var(--green-deep-hover); }
+.pdp-btn-cart:disabled { opacity: 0.7; cursor: not-allowed; }
+.pdp-btn-quote {
       flex: 1;
       padding: 15px 20px;
-      background: var(--amber);
-      color: var(--charcoal);
-      border: none;
+      background: var(--white);
+      color: var(--green-deep);
+      border: 2px solid var(--green-deep);
       border-radius: var(--radius-sm);
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-size: var(--fs-16);
       font-weight: 700;
       cursor: pointer;
       transition: background var(--transition), transform var(--transition);
     }
-    .pdp-btn-quote:hover { background: var(--amber-dark); }
-    .pdp-btn-quote.in-quote {
+.pdp-btn-quote:hover { background: var(--green-pale); }
+.pdp-btn-quote.in-quote {
       background: var(--green-pale);
       color: var(--green-deep);
       border: 2px solid var(--green-light);
     }
-
-    /* Trust badges */
-    .pdp-trust {
+.pdp-trust {
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -225,42 +212,38 @@
       border: 1px solid var(--border);
       margin-bottom: 24px;
     }
-    .pdp-trust-item {
+.pdp-trust-item {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.8rem;
+      font-size: var(--fs-12);
       color: var(--slate);
       font-weight: 500;
     }
-    .pdp-trust-item svg { color: var(--green-deep); flex-shrink: 0; }
-
-    /* Description */
-    .pdp-desc-label {
-      font-size: 0.75rem;
+.pdp-trust-item svg { color: var(--green-deep); flex-shrink: 0; }
+.pdp-desc-label {
+      font-size: var(--fs-12);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
       margin-bottom: 12px;
     }
-    .pdp-desc {
-      font-size: 0.88rem;
+.pdp-desc {
+      font-size: var(--fs-14);
       color: var(--slate);
       line-height: 1.75;
     }
-    .pdp-desc p { margin-bottom: 10px; }
-    .pdp-desc ul { padding-left: 18px; margin-bottom: 10px; }
-    .pdp-desc li { margin-bottom: 4px; }
-
-    /* Loading / error */
-    .pdp-loading, .pdp-error {
+.pdp-desc p { margin-bottom: 10px; }
+.pdp-desc ul { padding-left: 18px; margin-bottom: 10px; }
+.pdp-desc li { margin-bottom: 4px; }
+.pdp-loading, .pdp-error {
       grid-column: 1 / -1;
       text-align: center;
       padding: 100px 20px;
       color: var(--muted);
     }
-    .pdp-spinner {
+.pdp-spinner {
       width: 40px; height: 40px;
       border: 3px solid var(--border);
       border-top-color: var(--green-main);
@@ -268,13 +251,12 @@
       animation: pdp-spin 0.8s linear infinite;
       margin: 0 auto 20px;
     }
-    @keyframes pdp-spin { to { transform: rotate(360deg); } }
-
-    @media (max-width: 900px) {
-      .pdp-breadcrumb { padding: 12px 20px; }
-      .pdp-wrap { grid-template-columns: 1fr; gap: 32px; padding: 32px 20px 60px; }
-      .pdp-gallery { position: static; }
-    }
+@keyframes pdp-spin { to { transform: rotate(360deg); } }
+@media (max-width: 900px) {
+  .pdp-breadcrumb { padding: 12px 20px; }
+  .pdp-wrap { grid-template-columns: 1fr; gap: 32px; padding: 32px 20px 60px; }
+  .pdp-gallery { position: static; }
+}
   </style>
 </head>
 <body>
@@ -333,18 +315,18 @@
       <ul>
         <li><a href="about.html">About Freedom Green</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="installer-services.html">Installer Services</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
+        <li><a href="installers.html">Installer Services</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms of Service</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Freedom Green Energy Ltd. All rights reserved. Froling Authorised UK Distributor.</p>
     <div class="footer-bottom-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Cookies</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Privacy</a>
+      <a href="https://freedomgreen.co.uk/policies/terms-of-service">Terms</a>
+      <a href="https://freedomgreen.co.uk/policies/privacy-policy">Cookies</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>

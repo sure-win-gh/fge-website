@@ -19,6 +19,9 @@
   var EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // from Account > API Keys
   var EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // from Email Services
   var EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // from Email Templates
+  // Shared with assets/forms.js so every enquiry form uses the same keys.
+  // shortcut: installers.html keeps its own copy of these three keys; fold it in when that page joins the shared header.
+  window.FGE_EMAILJS = { publicKey: EMAILJS_PUBLIC_KEY, serviceId: EMAILJS_SERVICE_ID, templateId: EMAILJS_TEMPLATE_ID };
 
   var QUOTE_KEY = 'fge_quote';
 
@@ -292,9 +295,16 @@
       message:     form.message.value || 'No additional message.'
     };
 
-    if (typeof emailjs === 'undefined') {
-      statusEl.textContent = 'Email service unavailable. Please call 0333 700 0275.';
-      statusEl.className   = 'quote-status-error';
+    // Until real EmailJS keys are set (or if the library didn't load), hand the quote to the visitor's
+    // email app instead of failing. The list stays, since we can't know they pressed Send.
+    if (typeof emailjs === 'undefined' || /^YOUR_/.test(EMAILJS_PUBLIC_KEY)) {
+      var body = 'Quote request\n\n' + itemList +
+        '\n\nName: ' + params.from_name + '\nCompany: ' + params.company +
+        '\nEmail: ' + params.reply_to + '\nPhone: ' + params.phone + '\n\n' + params.message;
+      window.location.href = 'mailto:info@freedomgreen.co.uk?subject=' + encodeURIComponent('Quote request from ' + params.from_name) +
+        '&body=' + encodeURIComponent(body);
+      statusEl.textContent = 'Your email app should now be open with the quote filled in. Press Send to finish, or call 0333 700 0275.';
+      statusEl.className   = 'quote-status-ok';
       submitBtn.disabled   = false;
       submitBtn.textContent = 'Send Quote Request';
       return;
