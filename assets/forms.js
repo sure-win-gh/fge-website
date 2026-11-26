@@ -61,7 +61,7 @@
       if (!emailjsReady()) {
         location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         done(form, thanks +
-          '<p>Your email app should now be open with your enquiry filled in &mdash; press <strong>Send</strong> to finish.</p>' +
+          '<p>Your email app should now be open with your enquiry filled in. Press <strong>Send</strong> to finish.</p>' +
           '<p>Nothing opened? Email <a href="mailto:' + TO + '">' + TO + '</a> or call ' + PHONE + ', Mon&ndash;Fri 8:30am&ndash;5:00pm.</p>');
         return;
       }
@@ -88,7 +88,7 @@
         var err = form.querySelector('.form-error') || btn.insertAdjacentElement('beforebegin', document.createElement('p'));
         err.className = 'form-error';
         err.setAttribute('role', 'alert');
-        err.innerHTML = 'Sorry &mdash; that didn&rsquo;t send. Your details are still here; try again, or call ' + PHONE + '.';
+        err.innerHTML = 'Sorry, that didn&rsquo;t send. Your details are still here; try again, or call ' + PHONE + '.';
       });
     });
   }); }

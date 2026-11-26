@@ -87,7 +87,7 @@
       '<div class="nav-inner">' +
         '<a class="logo" href="index.html">' +
           '<img class="logo-img" src="assets/img/logo.png" width="224" height="138" ' +
-               'alt="Freedom Green Energy &#8212; Renewable Energy Technologies" />' +
+               'alt="Freedom Green Energy, Renewable Energy Technologies" />' +
         '</a>' +
         '<ul class="nav-links">' + NAV.map(desktopItem).join('') + '</ul>' +
         '<div class="nav-actions">' +
@@ -111,7 +111,7 @@
       '<div class="mobile-menu-header">' +
         '<a class="logo" href="index.html">' +
           '<img class="logo-img" src="assets/img/logo.png" width="224" height="138" ' +
-               'alt="Freedom Green Energy &#8212; Renewable Energy Technologies" />' +
+               'alt="Freedom Green Energy, Renewable Energy Technologies" />' +
         '</a>' +
         '<button class="icon-btn" id="mobileClose" aria-label="Close menu">' +
           '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
